@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div>Boilerplate</div>;
+  return <div></div>;
 }
