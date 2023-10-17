@@ -23,19 +23,19 @@ const Navigation = () => {
         <SheetContent side="left" className="flex flex-col gap-2">
           <SheetHeader className="text-lg font-semibold">Menu</SheetHeader>
           <Button variant="outline" className="w-full gap-2">
-            <LogInIcon size={20} />
+            <LogInIcon size={20} className="text-primary" />
             Fazer login
           </Button>
           <Button variant="outline" className="w-full gap-2">
-            <HomeIcon size={20} />
+            <HomeIcon size={20} className="text-primary" />
             Início
           </Button>
           <Button variant="outline" className="w-full gap-2">
-            <PercentIcon size={20} />
+            <PercentIcon size={20} className="text-primary" />
             Ofertas
           </Button>
           <Button variant="outline" className="w-full gap-2">
-            <Library size={20} />
+            <Library size={20} className="text-primary" />
             Catálogo
           </Button>
         </SheetContent>
