@@ -11,6 +11,7 @@
   "moduleNameMapper": {
     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/.jest/__mocks__/fileMock.ts",
     "\\.(css|less)$": "<rootDir>/.jest/__mocks__/styleMock.ts",
-    "^@/components/(.*)$": "<rootDir>/src/components/$1"
+    "^@/components/(.*)$": "<rootDir>/src/components/$1",
+    "^@/lib/(.*)$": "<rootDir>/src/lib/$1"
   }
 }
