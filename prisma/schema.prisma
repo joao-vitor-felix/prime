@@ -14,20 +14,75 @@ model Category {
   id       String    @id @default(uuid())
   name     String
   slug     String
+  imageUrl String
   products Product[]
 }
 
+enum Condition {
+  NOVO
+  USADO
+}
+
 model Product {
-  id                 String   @id @default(uuid())
+  id                 String         @id @default(uuid())
   name               String
   slug               String
   description        String
   imageUrls          String[]
-  basePrice          Decimal  @db.Decimal(8, 2)
-  category           Category @relation(fields: [categoryId], references: [id])
+  condition          Condition      @default(NOVO)
+  basePrice          Decimal        @db.Decimal(8, 2)
   categoryId         String
-  hasDiscount        Boolean  @default(false)
-  discountPercentage Int      @default(0)
+  category           Category       @relation(fields: [categoryId], references: [id])
+  discountPercentage Int            @default(0)
+  soldTimes          Int            @default(0)
+  rating             Rating[]
+  orderProduct       OrderProduct[]
+}
+
+model Rating {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  productId String
+  product   Product  @relation(fields: [productId], references: [id])
+  rating    Int      @default(0)
+  comment   String?
+  createdAt DateTime @default(now())
+}
+
+enum OrderStatus {
+  WAITING_FOR_PAYMENT
+  PAYMENT_CONFIRMED
+  PAYMENT_CANCELLED
+}
+
+enum PaymentMethod {
+  CREDIT_CARD
+  BOLETO
+  PIX
+}
+
+model Order {
+  id            String         @id @default(uuid())
+  userId        String
+  user          User           @relation(fields: [userId], references: [id])
+  orderProducts OrderProduct[]
+  createdAt     DateTime       @default(now())
+  status        OrderStatus    @default(WAITING_FOR_PAYMENT)
+  paymentMethod PaymentMethod  @default(CREDIT_CARD)
+}
+
+model OrderProduct {
+  id            String  @id @default(uuid())
+  productId     String
+  product       Product @relation(fields: [productId], references: [id])
+  orderId       String
+  order         Order   @relation(fields: [orderId], references: [id])
+  quantity      Int
+  subtotalPrice Decimal @db.Decimal(8, 2)
+  shippingPrice Decimal @default(0) @db.Decimal(8, 2)
+  discoutPrice  Decimal @db.Decimal(8, 2)
+  totalPrice    Decimal @db.Decimal(8, 2)
 }
 
 model Account {
@@ -58,13 +113,16 @@ model Session {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String?   @unique
-  emailVerified DateTime?
-  image         String?
-  accounts      Account[]
-  sessions      Session[]
+  id             String    @id @default(cuid())
+  name           String?
+  email          String?   @unique
+  emailVerified  DateTime?
+  hashedPassword String?
+  image          String?
+  accounts       Account[]
+  sessions       Session[]
+  order          Order[]
+  rating         Rating[]
 }
 
 model VerificationToken {
