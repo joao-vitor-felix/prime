@@ -107,12 +107,12 @@ const Navigation = () => {
         </SheetContent>
       </Sheet>
 
-      <h1 className="flex items-center gap-1 text-xl font-semibold">
+      <Link href="/" className="flex items-center gap-1 text-xl font-semibold">
         <span className="text-primary">
           <BadgeCheck size={24} />{" "}
         </span>
         Prime
-      </h1>
+      </Link>
 
       <Button size="icon" variant="outline" aria-label="Abrir o carrinho">
         <ShoppingCartIcon />
