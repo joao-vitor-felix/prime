@@ -53,9 +53,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ product, className }) => {
 
           <span
             className={
-              hasDiscount
-                ? "text-xs line-through opacity-75"
-                : "text-sm font-semibold"
+              hasDiscount ? "text-xs line-through opacity-75" : "font-semibold"
             }
           >
             {formatPrice(Number(product.basePrice))}
