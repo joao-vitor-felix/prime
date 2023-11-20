@@ -25,10 +25,9 @@ const Navigation = () => {
   const { status, data } = useSession();
   const handleLogin = async () => await signIn();
   const handleLogout = async () => await signOut();
+  const router = useRouter();
 
   const goToPage = (page = "/") => router.push(page);
-
-  const router = useRouter();
 
   return (
     <Card className="flex items-center justify-between p-[1.875rem]">
