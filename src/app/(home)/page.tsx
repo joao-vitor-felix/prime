@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-import Footer from "@/components/ui/Footer";
 import ProductList from "@/components/ui/ProductList";
 import SectionTitle from "@/components/ui/SectionTitle";
 
@@ -77,8 +76,6 @@ export default async function Home() {
           <ProductList products={mouses} />
         </section>
       </div>
-
-      <Footer />
     </main>
   );
 }
