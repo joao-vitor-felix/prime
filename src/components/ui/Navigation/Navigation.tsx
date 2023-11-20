@@ -11,18 +11,24 @@ import {
   PercentIcon,
   ShoppingCartIcon
 } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { signIn, signOut, useSession } from "next-auth/react";
+
+import { Avatar, AvatarFallback, AvatarImage } from "../Avatar";
 import { Button } from "../Button";
 import { Card } from "../Card";
-import { Sheet, SheetClose, SheetContent, SheetTrigger } from "../Sheet";
-import { signIn, signOut, useSession } from "next-auth/react";
-import { Avatar, AvatarFallback, AvatarImage } from "../Avatar";
 import { Separator } from "../Separator";
-import Link from "next/link";
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from "../Sheet";
 
 const Navigation = () => {
   const { status, data } = useSession();
   const handleLogin = async () => await signIn();
   const handleLogout = async () => await signOut();
+
+  const goToPage = (page = "/") => router.push(page);
+
+  const router = useRouter();
 
   return (
     <Card className="flex items-center justify-between p-[1.875rem]">
@@ -73,9 +79,13 @@ const Navigation = () => {
               </Button>
             )}
 
-            <Button variant="outline" className="w-full gap-2">
+            <Button
+              variant="outline"
+              className="w-full gap-2"
+              onClick={() => goToPage()}
+            >
               <HomeIcon size={20} className="text-primary" />
-              <Link href="/">Início</Link>
+              Início
             </Button>
 
             {status === "authenticated" && (
@@ -89,7 +99,11 @@ const Navigation = () => {
               <PercentIcon size={20} className="text-primary" />
               Ofertas
             </Button>
-            <Button variant="outline" className="w-full gap-2">
+            <Button
+              variant="outline"
+              className="w-full gap-2"
+              onClick={() => goToPage("/category")}
+            >
               <Library size={20} className="text-primary" />
               Catálogo
             </Button>
