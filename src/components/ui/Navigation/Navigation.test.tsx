@@ -1,10 +1,12 @@
-import { screen, render } from "@testing-library/react";
-import Navigation from "./Navigation";
-import { useSession } from "next-auth/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Session } from "next-auth";
+import { useSession } from "next-auth/react";
+
+import Navigation from "./Navigation";
 
 jest.mock("next-auth/react");
+jest.mock("next/navigation");
 
 describe("Navigation", () => {
   it("should render the Navigation by default", async () => {
