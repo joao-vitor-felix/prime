@@ -1,14 +1,23 @@
 import { Product } from "@prisma/client";
-import ProductItem from "./ProductItem";
+
 import { computeProductTotalPrice } from "@/helpers/product";
+import { cn } from "@/lib/utils";
+
+import ProductItem from "./ProductItem";
 
 type ProductListProps = {
   products: Product[];
+  className?: string;
 };
 
-const ProductList: React.FC<ProductListProps> = ({ products }) => {
+const ProductList: React.FC<ProductListProps> = ({ products, className }) => {
   return (
-    <div className="flex w-full gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+    <div
+      className={cn(
+        "flex w-full gap-4 overflow-x-auto [&::-webkit-scrollbar]:hidden",
+        className
+      )}
+    >
       {products.map(product => (
         <ProductItem
           key={product.id}

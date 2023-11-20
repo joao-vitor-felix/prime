@@ -1,7 +1,9 @@
-import { ProductWithTotalPrice } from "@/helpers/product";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+
+import { ProductWithTotalPrice } from "@/helpers/product";
+import { cn } from "@/lib/utils";
+
 import DiscountBadge from "./DiscountBadge";
 
 type ProductItemProps = {
@@ -22,7 +24,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ product, className }) => {
   return (
     <Link
       href={`/product/${product.slug}`}
-      className={cn("flex min-w-[156px] flex-col gap-4", className)}
+      className={cn("flex min-w-[170px] flex-col gap-4", className)}
     >
       <div className="relative flex aspect-square w-full items-center justify-center rounded-lg bg-accent">
         <Image
