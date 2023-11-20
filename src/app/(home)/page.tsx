@@ -1,10 +1,12 @@
-import Categories from "./components/Categories";
-import { prisma } from "../../../prisma/client";
+import Link from "next/link";
+
+import Footer from "@/components/ui/Footer";
 import ProductList from "@/components/ui/ProductList";
 import SectionTitle from "@/components/ui/SectionTitle";
+
+import { prisma } from "../../../prisma/client";
+import CategoriesButtons from "./components/CategoriesButtons";
 import PromoBanner from "./components/PromoBanner";
-import Footer from "@/components/ui/Footer";
-import Link from "next/link";
 
 export default async function Home() {
   const deals = await prisma.product.findMany({
@@ -40,7 +42,7 @@ export default async function Home() {
             alt="Produtos com até 55% de desconto neste mês"
           />
         </Link>
-        <Categories />
+        <CategoriesButtons />
 
         <section className="mt-6">
           <Link href="/deals">
