@@ -36,7 +36,8 @@
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "simple-import-sort/imports": "warn",
-    "simple-import-sort/exports": "warn"
+    "simple-import-sort/exports": "warn",
+    "no-var": "off"
   },
   "ignorePatterns": ["node_modules", "!.*"]
 }
