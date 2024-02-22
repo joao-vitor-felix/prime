@@ -8,7 +8,7 @@ import {
   SheetTrigger
 } from "@/components/ui";
 
-import _Menu from "./components/Menu";
+import _Menu from "./components/Menu/Menu";
 
 const Header = () => {
   return (
