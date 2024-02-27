@@ -1,4 +1,4 @@
-import { BadgeCheck, Menu, ShoppingCart } from "lucide-react";
+import { BadgeCheck, Menu as MenuIcon, ShoppingCart } from "lucide-react";
 
 import {
   Button,
@@ -8,7 +8,7 @@ import {
   SheetTrigger
 } from "@/components/ui";
 
-import _Menu from "./components/Menu/Menu";
+import Menu from "./components/Menu/Menu";
 
 const Header = () => {
   return (
@@ -16,14 +16,14 @@ const Header = () => {
       <div className="flex items-center justify-between p-[1.875rem]">
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="outline" size="icon" aria-label="Abrir Menu">
-              <Menu />
+            <Button variant="outline" size="icon" aria-label="Abrir menu">
+              <MenuIcon />
             </Button>
           </SheetTrigger>
 
           <SheetContent side="left" className="flex flex-col gap-3">
             <SheetTitle>Menu</SheetTitle>
-            <_Menu />
+            <Menu />
           </SheetContent>
         </Sheet>
 
