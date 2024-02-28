@@ -1,4 +1,5 @@
 import { BadgeCheck, Menu as MenuIcon, ShoppingCart } from "lucide-react";
+import Link from "next/link";
 
 import {
   Button,
@@ -27,15 +28,15 @@ const Header = () => {
           </SheetContent>
         </Sheet>
 
-        <div className="flex gap-1" aria-label="Logo da Prime">
+        <Link href="/" className="flex gap-1" aria-label="Logo da Prime">
           <BadgeCheck className="text-primary" />
           <span className="font-bold">Prime</span>
-        </div>
+        </Link>
 
         <Button
           variant="outline"
           size="icon"
-          aria-label="Seu carrinho de compras"
+          aria-label="Abrir carrinho de compras"
         >
           <ShoppingCart />
         </Button>
