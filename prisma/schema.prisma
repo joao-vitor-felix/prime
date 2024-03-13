@@ -12,6 +12,7 @@ model Category {
   id       String    @id @default(uuid())
   name     String
   slug     String
+  imageUrl String
   products Product[]
   coupons  Coupon[]
 }
