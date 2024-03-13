@@ -1,4 +1,4 @@
-const { PrismaClient } = require("@prisma/client");
+import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -9,58 +9,61 @@ async function main() {
         name: "Logitech",
         slug: "logitech",
         logoUrl:
-          "https://prime-project.s3.sa-east-1.amazonaws.com/logitech-logo.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/logitech-logo.png"
       },
       {
         name: "Epomaker",
         slug: "epomaker",
         logoUrl:
-          "https://prime-project.s3.sa-east-1.amazonaws.com/epomaker-logo.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/epomaker-logo.png"
       },
       {
         name: "Redragon",
         slug: "redragon",
         logoUrl:
-          "https://prime-project.s3.sa-east-1.amazonaws.com/redragon-logo.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/redragon-logo.png"
       },
       {
         name: "HyperX",
         slug: "hyperx",
         logoUrl:
-          "https://prime-project.s3.sa-east-1.amazonaws.com/hyperx-logo.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/hyperx-logo.png"
       },
       {
         name: "Razer",
         slug: "razer",
         logoUrl:
-          "https://prime-project.s3.sa-east-1.amazonaws.com/razer-logo.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/razer-logo.png"
       },
       {
         name: "Force One",
         slug: "force-one",
         logoUrl:
-          "https://prime-project.s3.sa-east-1.amazonaws.com/force-one-logo.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/force-one-logo.png"
       },
       {
         name: "Dell",
         slug: "dell",
         logoUrl:
-          "https://prime-project.s3.sa-east-1.amazonaws.com/dell-logo.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/dell-logo.png"
       },
       {
         name: "Sony",
         slug: "sony",
         logoUrl:
-          "https://prime-project.s3.sa-east-1.amazonaws.com/sony-logo.png",
-      },
+          "https://prime-project.s3.sa-east-1.amazonaws.com/sony-logo.png"
+      }
     ];
 
     await prisma.brand.createMany({
-      data: brands,
+      data: brands
     });
 
-    const brandMap = {};
-    brands.forEach((brand) => {
+    const createdBrands = await prisma.brand.findMany();
+
+    const brandMap: Record<string, string> = {};
+
+    createdBrands.forEach(brand => {
       brandMap[brand.name] = brand.id;
     });
 
@@ -68,8 +71,8 @@ async function main() {
       data: {
         name: "Mouses",
         slug: "mouses",
-        imageUrl: "https://prime-project.s3.sa-east-1.amazonaws.com/mouses.png",
-      },
+        imageUrl: "https://prime-project.s3.sa-east-1.amazonaws.com/mouses.png"
+      }
     });
 
     const mouses = [
@@ -83,11 +86,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_mx-master-3s.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_mx-master-3s.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_mx-master-3s.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_mx-master-3s.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_mx-master-3s.png"
         ],
         basePrice: 650,
         categoryId: mousesCategory.id,
-        discountPercentage: 10, // 10% discount
+        discountPercentage: 10 // 10% discount
       },
       {
         name: "Logitech Pro X Superlight",
@@ -99,11 +102,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_logi-superlight.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_logi-superlight.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_logi-superlight.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-superlight.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-superlight.png"
         ],
         basePrice: 750,
         categoryId: mousesCategory.id,
-        discountPercentage: 5, // 5% discount
+        discountPercentage: 5 // 5% discount
       },
       {
         name: "Logitech G305 Lightspeed",
@@ -115,11 +118,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_logi-lightspeed.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_logi-lightspeed.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_logi-lightspeed.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-lightspeed.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-lightspeed.png"
         ],
         basePrice: 300,
         categoryId: mousesCategory.id,
-        discountPercentage: 15, // 15% discount
+        discountPercentage: 15 // 15% discount
       },
       {
         name: "HyperX Pulsefire Dart",
@@ -131,11 +134,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_hyperx-dart.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_hyperx-dart.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_hyperx-dart.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_hyperx-dart.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_hyperx-dart.png"
         ],
         basePrice: 600,
         categoryId: mousesCategory.id,
-        discountPercentage: 10, // 10% discount
+        discountPercentage: 10 // 10% discount
       },
       {
         name: "Razer Deathadder V2 Pro",
@@ -147,16 +150,16 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_razer-deathadder.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_razer-deathadder.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_razer-deathadder.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_razer-deathadder.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_razer-deathadder.png"
         ],
         basePrice: 350,
         categoryId: mousesCategory.id,
-        discountPercentage: 0,
-      },
+        discountPercentage: 0
+      }
     ];
 
     await prisma.product.createMany({
-      data: mouses,
+      data: mouses
     });
 
     const keyboardsCategory = await prisma.category.create({
@@ -164,8 +167,8 @@ async function main() {
         name: "Teclados",
         slug: "keyboards",
         imageUrl:
-          "https://prime-project.s3.sa-east-1.amazonaws.com/keyboards.png",
-      },
+          "https://prime-project.s3.sa-east-1.amazonaws.com/keyboards.png"
+      }
     });
 
     const keyboards = [
@@ -179,11 +182,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_logi-mx-keys-mini.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_logi-mx-keys-mini.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_logi-mx-keys-mini.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-mx-keys-mini.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-mx-keys-mini.png"
         ],
         basePrice: 650,
         categoryId: keyboardsCategory.id,
-        discountPercentage: 10, // 10% discount
+        discountPercentage: 10 // 10% discount
       },
       {
         name: "Logitech MX Keys S",
@@ -195,11 +198,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_logi-mx-keys-s.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_logi-mx-keys-s.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_logi-mx-keys-s.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-mx-keys-s.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-mx-keys-s.png"
         ],
         basePrice: 750,
         categoryId: keyboardsCategory.id,
-        discountPercentage: 10, // 10% discount
+        discountPercentage: 10 // 10% discount
       },
       {
         name: "Logitech Pop Keys",
@@ -211,11 +214,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_logi-pop-keys.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_logi-pop-keys.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_logi-pop-keys.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-pop-keys.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-pop-keys.png"
         ],
         basePrice: 440,
         categoryId: keyboardsCategory.id,
-        discountPercentage: 5, // 10% discount
+        discountPercentage: 5 // 10% discount
       },
       {
         name: "Logitech MX Mechanical",
@@ -227,11 +230,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_logi-mx-mechanical.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_logi-mx-mechanical.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_logi-mx-mechanical.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-mx-mechanical.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-mx-mechanical.png"
         ],
         basePrice: 700,
         categoryId: keyboardsCategory.id,
-        discountPercentage: 15, // 10% discount
+        discountPercentage: 15 // 10% discount
       },
       {
         name: "Epomaker TH80",
@@ -243,11 +246,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_epomaker-th80.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_epomaker-th80.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_epomaker-th80.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_epomaker-th80.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_epomaker-th80.png"
         ],
         basePrice: 500,
         categoryId: keyboardsCategory.id,
-        discountPercentage: 5, // 10% discount
+        discountPercentage: 5 // 10% discount
       },
       {
         name: "Redragon Gamer Ashe",
@@ -259,16 +262,16 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_redragon-gamer-ashe.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_redragon-gamer-ashe.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_redragon-gamer-ashe.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_redragon-gamer-ashe.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_redragon-gamer-ashe.png"
         ],
         basePrice: 400,
         categoryId: keyboardsCategory.id,
-        discountPercentage: 25, // 10% discount
-      },
+        discountPercentage: 25 // 10% discount
+      }
     ];
 
     await prisma.product.createMany({
-      data: keyboards,
+      data: keyboards
     });
 
     const headphonesCategory = await prisma.category.create({
@@ -276,8 +279,8 @@ async function main() {
         name: "Fones",
         slug: "headphones",
         imageUrl:
-          "https://prime-project.s3.sa-east-1.amazonaws.com/headphones.png",
-      },
+          "https://prime-project.s3.sa-east-1.amazonaws.com/headphones.png"
+      }
     });
 
     const headphones = [
@@ -291,11 +294,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_logi-vibe.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_logi-vibe.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_logi-vibe.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-vibe.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-vibe.png"
         ],
         basePrice: 750,
         categoryId: headphonesCategory.id,
-        discountPercentage: 10, // 10% discount
+        discountPercentage: 10 // 10% discount
       },
       {
         name: "Logitech Pro X 2 Lightspeed",
@@ -307,11 +310,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_logi-lightspeed-phone.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_logi-lightspeed-phone.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_logi-lightspeed-phone.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-lightspeed-phone.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-lightspeed-phone.png"
         ],
         basePrice: 1200,
         categoryId: headphonesCategory.id,
-        discountPercentage: 5, // 10% discount
+        discountPercentage: 5 // 10% discount
       },
       {
         name: "Logitech Astro A30",
@@ -323,11 +326,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_logi-astro-a30.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_logi-astro-a30.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_logi-astro-a30.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-astro-a30.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-astro-a30.png"
         ],
         basePrice: 1500,
         categoryId: headphonesCategory.id,
-        discountPercentage: 15, // 10% discount
+        discountPercentage: 15 // 10% discount
       },
       {
         name: "Logitech Zone Wired Earbuds",
@@ -339,11 +342,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_logi-earbuds.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_logi-earbuds.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_logi-earbuds.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-earbuds.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-earbuds.png"
         ],
         basePrice: 550,
         categoryId: headphonesCategory.id,
-        discountPercentage: 5, // 10% discount
+        discountPercentage: 5 // 10% discount
       },
       {
         name: "Hyperx Cloud Stinger 2",
@@ -355,11 +358,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_hyperx-stinger.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_hyperx-stinger.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_hyperx-stinger.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_hyperx-stinger.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_hyperx-stinger.png"
         ],
         basePrice: 250,
         categoryId: headphonesCategory.id,
-        discountPercentage: 0, // 10% discount
+        discountPercentage: 0 // 10% discount
       },
       {
         name: "Razer Kraken X",
@@ -371,16 +374,16 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_razer-kraken.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_razer-kraken.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_razer-kraken.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_razer-kraken.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_razer-kraken.png"
         ],
         basePrice: 200,
         categoryId: headphonesCategory.id,
-        discountPercentage: 0, // 10% discount
-      },
+        discountPercentage: 0 // 10% discount
+      }
     ];
 
     await prisma.product.createMany({
-      data: headphones,
+      data: headphones
     });
 
     const mousepadsCategory = await prisma.category.create({
@@ -388,8 +391,8 @@ async function main() {
         name: "Mousepads",
         slug: "mousepads",
         imageUrl:
-          "https://prime-project.s3.sa-east-1.amazonaws.com/mousepads.png",
-      },
+          "https://prime-project.s3.sa-east-1.amazonaws.com/mousepads.png"
+      }
     });
 
     const mousepads = [
@@ -403,11 +406,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_logi-powerplay.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_logi-powerplay.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_logi-powerplay.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-powerplay.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-powerplay.png"
         ],
         basePrice: 950,
         categoryId: mousepadsCategory.id,
-        discountPercentage: 10, // 10% discount
+        discountPercentage: 10 // 10% discount
       },
       {
         name: "Logitech Desk Mat",
@@ -419,11 +422,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_logi-desk-mat.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_logi-desk-mat.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_logi-desk-mat.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-desk-mat.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-desk-mat.png"
         ],
         basePrice: 150,
         categoryId: mousepadsCategory.id,
-        discountPercentage: 0, // 10% discount
+        discountPercentage: 0 // 10% discount
       },
       {
         name: "Logitech G740",
@@ -435,11 +438,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_logi-g740.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_logi-g740.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_logi-g740.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-g740.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-g740.png"
         ],
         basePrice: 200,
         categoryId: mousepadsCategory.id,
-        discountPercentage: 5, // 10% discount
+        discountPercentage: 5 // 10% discount
       },
       {
         name: "Logitech Mousepad Studio Series",
@@ -451,11 +454,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_logi-studio-series.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_logi-studio-series.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_logi-studio-series.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-studio-series.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-studio-series.png"
         ],
         basePrice: 250,
         categoryId: mousepadsCategory.id,
-        discountPercentage: 15, // 10% discount
+        discountPercentage: 15 // 10% discount
       },
       {
         name: "Force One Skyhawk Dark",
@@ -467,11 +470,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_force-dark.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_force-dark.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_force-dark.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_force-dark.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_force-dark.png"
         ],
         basePrice: 300,
         categoryId: mousepadsCategory.id,
-        discountPercentage: 10, // 10% discount
+        discountPercentage: 10 // 10% discount
       },
       {
         name: "Force One Skyhawk Snow",
@@ -483,16 +486,16 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_force-snow.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_force-snow.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_force-snow.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_force-snow.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_force-snow.png"
         ],
         basePrice: 300,
         categoryId: mousepadsCategory.id,
-        discountPercentage: 5, // 10% discount
-      },
+        discountPercentage: 5 // 10% discount
+      }
     ];
 
     await prisma.product.createMany({
-      data: mousepads,
+      data: mousepads
     });
 
     const monitorsCategory = await prisma.category.create({
@@ -500,8 +503,8 @@ async function main() {
         name: "Monitores",
         slug: "monitors",
         imageUrl:
-          "https://prime-project.s3.sa-east-1.amazonaws.com/monitors.png",
-      },
+          "https://prime-project.s3.sa-east-1.amazonaws.com/monitors.png"
+      }
     });
 
     const monitors = [
@@ -515,11 +518,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_dell-S2421HN.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_dell-S2421HN.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_dell-S2421HN.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_dell-S2421HN.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_dell-S2421HN.png"
         ],
         basePrice: 1500,
         categoryId: monitorsCategory.id,
-        discountPercentage: 15, // 10% discount
+        discountPercentage: 15 // 10% discount
       },
       {
         name: "Dell P2422H",
@@ -531,11 +534,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_dell-P2422H.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_dell-P2422H.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_dell-P2422H.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_dell-P2422H.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_dell-P2422H.png"
         ],
         basePrice: 2000,
         categoryId: monitorsCategory.id,
-        discountPercentage: 5, // 10% discount
+        discountPercentage: 5 // 10% discount
       },
       {
         name: "Dell P2723QE",
@@ -547,11 +550,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_dell-P2723QE.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_dell-P2723QE.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_dell-P2723QE.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_dell-P2723QE.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_dell-P2723QE.png"
         ],
         basePrice: 2500,
         categoryId: monitorsCategory.id,
-        discountPercentage: 0, // 10% discount
+        discountPercentage: 0 // 10% discount
       },
       {
         name: "Dell S3422DWG",
@@ -563,11 +566,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_dell-S3422DWG.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_dell-S3422DWG.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_dell-S3422DWG.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_dell-S3422DWG.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_dell-S3422DWG.png"
         ],
         basePrice: 3200,
         categoryId: monitorsCategory.id,
-        discountPercentage: 0, // 10% discount
+        discountPercentage: 0 // 10% discount
       },
       {
         name: "Dell S3222DGM",
@@ -579,11 +582,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_dell-S3222DGM.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_dell-S3222DGM.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_dell-S3222DGM.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_dell-S3222DGM.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_dell-S3222DGM.png"
         ],
         basePrice: 3500,
         categoryId: monitorsCategory.id,
-        discountPercentage: 0, // 10% discount
+        discountPercentage: 0 // 10% discount
       },
       {
         name: "Dell AW2524HF",
@@ -595,16 +598,16 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_dell-AW2524HF.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_dell-AW2524HF.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_dell-AW2524HF.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_dell-AW2524HF.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_dell-AW2524HF.png"
         ],
         basePrice: 4200,
         categoryId: monitorsCategory.id,
-        discountPercentage: 10, // 10% discount
-      },
+        discountPercentage: 10 // 10% discount
+      }
     ];
 
     await prisma.product.createMany({
-      data: monitors,
+      data: monitors
     });
 
     const speakersCategory = await prisma.category.create({
@@ -612,8 +615,8 @@ async function main() {
         name: "Speakers",
         slug: "speakers",
         imageUrl:
-          "https://prime-project.s3.sa-east-1.amazonaws.com/speakers.png",
-      },
+          "https://prime-project.s3.sa-east-1.amazonaws.com/speakers.png"
+      }
     });
 
     const speakers = [
@@ -627,11 +630,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_logi-surround-z607.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_logi-surround-z607.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_logi-surround-z607.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-surround-z607.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-surround-z607.png"
         ],
         basePrice: 1200,
         categoryId: speakersCategory.id,
-        discountPercentage: 5, // 10% discount
+        discountPercentage: 5 // 10% discount
       },
       {
         name: "Logitech Dock",
@@ -643,11 +646,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_logi-dock.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_logi-dock.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_logi-dock.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-dock.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_logi-dock.png"
         ],
         basePrice: 4500,
         categoryId: speakersCategory.id,
-        discountPercentage: 15, // 10% discount
+        discountPercentage: 15 // 10% discount
       },
       {
         name: "Sony SA-Z9R Speakers",
@@ -659,11 +662,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_sony-SA-Z9R.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_sony-SA-Z9R.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_sony-SA-Z9R.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_sony-SA-Z9R.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_sony-SA-Z9R.png"
         ],
         basePrice: 4000,
         categoryId: speakersCategory.id,
-        discountPercentage: 10, // 10% discount
+        discountPercentage: 10 // 10% discount
       },
       {
         name: "Sony XB43 Extra Bass",
@@ -675,11 +678,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_sony-extra-bass.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_sony-extra-bass.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_sony-extra-bass.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_sony-extra-bass.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_sony-extra-bass.png"
         ],
         basePrice: 3200,
         categoryId: speakersCategory.id,
-        discountPercentage: 0, // 10% discount
+        discountPercentage: 0 // 10% discount
       },
       {
         name: "Sony XB23 Extra Bass",
@@ -691,11 +694,11 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_sony-XB23.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_sony-XB23.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_sony-XB23.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_sony-XB23.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_sony-XB23.png"
         ],
         basePrice: 3500,
         categoryId: speakersCategory.id,
-        discountPercentage: 0, // 10% discount
+        discountPercentage: 0 // 10% discount
       },
       {
         name: "Sony HT-S200F Soundbar",
@@ -707,16 +710,16 @@ async function main() {
           "https://prime-project.s3.sa-east-1.amazonaws.com/01_sony-S200F.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/02_sony-S200F.png",
           "https://prime-project.s3.sa-east-1.amazonaws.com/03_sony-S200F.png",
-          "https://prime-project.s3.sa-east-1.amazonaws.com/04_sony-S200F.png",
+          "https://prime-project.s3.sa-east-1.amazonaws.com/04_sony-S200F.png"
         ],
         basePrice: 2500,
         categoryId: speakersCategory.id,
-        discountPercentage: 0, // 10% discount
-      },
+        discountPercentage: 0 // 10% discount
+      }
     ];
 
     await prisma.product.createMany({
-      data: speakers,
+      data: speakers
     });
 
     console.log("Seed completed successfully");
@@ -731,7 +734,7 @@ main()
   .then(async () => {
     await prisma.$disconnect();
   })
-  .catch(async (e) => {
+  .catch(async e => {
     console.error(e);
     await prisma.$disconnect();
     process.exit(1);
