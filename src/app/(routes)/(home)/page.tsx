@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { Title } from "@/components/typograph/Title";
+
 import { CategoriesButtonList } from "./components/CategoriesButtonList";
 import { PromoBanner } from "./components/PromoBanner";
 
@@ -16,6 +18,7 @@ export default function Home() {
         />
       </Link>
       <CategoriesButtonList />
+      <Title>OFERTAS</Title>
     </main>
   );
 }
