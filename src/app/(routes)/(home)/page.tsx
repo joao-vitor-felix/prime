@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { CategoriesButtonList } from "./components/CategoriesButtonList";
 import { PromoBanner } from "./components/PromoBanner";
 
 export default function Home() {
@@ -10,11 +11,11 @@ export default function Home() {
           src="banner-discount-mobile.svg"
           width={0}
           height={0}
-          sizes="100vw"
           className="w-full"
           alt="Produtos com até 55% de desconto"
         />
       </Link>
+      <CategoriesButtonList />
     </main>
   );
 }
