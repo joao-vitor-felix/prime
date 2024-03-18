@@ -29,7 +29,7 @@ const Menu = () => {
   const handleLoginClick = async () => await signIn();
   const handleLogoutClick = async () => await signOut();
 
-  const userFirstLetter = data?.user?.name?.split("")[0];
+  const userNameFirstLetter = data?.user?.name?.split("")[0];
 
   return (
     <div className="flex flex-col gap-3">
@@ -39,7 +39,7 @@ const Menu = () => {
             {data?.user?.image && (
               <AvatarImage src={data.user.image} alt="Imagem da sua conta" />
             )}
-            <AvatarFallback>{userFirstLetter}</AvatarFallback>
+            <AvatarFallback>{userNameFirstLetter}</AvatarFallback>
           </Avatar>
           <h3 className="font-bold">{data?.user?.name}</h3>
         </div>
