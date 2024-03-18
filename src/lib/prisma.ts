@@ -1,18 +1,38 @@
 import { PrismaClient } from "@prisma/client";
 
-declare global {
-  var cachedPrisma: PrismaClient;
+function getExtendedClient() {
+  return new PrismaClient().$extends({
+    result: {
+      product: {
+        totalPrice: {
+          needs: { basePrice: true, discountPercentage: true },
+          compute({ basePrice, discountPercentage }) {
+            if (discountPercentage === 0) {
+              return Number(basePrice);
+            }
+            const totalDiscount =
+              Number(basePrice) * (discountPercentage / 100);
+
+            return Number(basePrice) - totalDiscount;
+          }
+        }
+      }
+    }
+  });
 }
 
-let prisma: PrismaClient;
+type ExtendedPrismaClient = ReturnType<typeof getExtendedClient>;
+declare global {
+  var cachedPrisma: ExtendedPrismaClient;
+}
+
+export let prisma: ExtendedPrismaClient;
 
 if (process.env.NODE_ENV === "production") {
-  prisma = new PrismaClient();
+  prisma = getExtendedClient();
 } else {
   if (!global.cachedPrisma) {
-    global.cachedPrisma = new PrismaClient();
+    global.cachedPrisma = getExtendedClient();
   }
   prisma = global.cachedPrisma;
 }
-
-export const db = prisma;
