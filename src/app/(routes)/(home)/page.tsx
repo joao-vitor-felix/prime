@@ -1,11 +1,23 @@
 import Link from "next/link";
 
-import { Title } from "@/components/typograph/Title";
+import { ProductList } from "@/components/ProductList";
+import { Title } from "@/components/typography/Title";
+import { prisma } from "@/lib/prisma";
 
 import { CategoriesButtonList } from "./components/CategoriesButtonList";
 import { PromoBanner } from "./components/PromoBanner";
 
-export default function Home() {
+export const dynamic = "force-dynamic";
+
+export default async function Home() {
+  const deals = await prisma.product.findMany({
+    where: {
+      discountPercentage: {
+        gt: 0
+      }
+    }
+  });
+
   return (
     <main className="mt-7 flex flex-col gap-7 px-5">
       <Link href="#" aria-label="Produtos com até 55% de desconto">
@@ -19,6 +31,7 @@ export default function Home() {
       </Link>
       <CategoriesButtonList />
       <Title>OFERTAS</Title>
+      <ProductList products={deals} />
     </main>
   );
 }
