@@ -28,17 +28,28 @@ export const ProductItem = ({ product }: ProductItemProps) => {
           className="max-h-[60%] min-w-[80%] object-contain"
         />
       </div>
-      <DiscountBadge
-        discount={product.discountPercentage}
-        className="absolute left-2 top-3 px-[0.5rem]"
-      />
+      {doesProductHaveDiscount && (
+        <DiscountBadge
+          discount={product.discountPercentage}
+          className="absolute left-2 top-3 px-[0.5rem]"
+        />
+      )}
       <div className="flex flex-col">
         <span className="truncate text-sm">{product.name}</span>
         <div className="flex items-center gap-2 truncate">
-          <span className="font-bold">{totalPrice}</span>
           {doesProductHaveDiscount && (
-            <span className="text-xs line-through opacity-75">{basePrice}</span>
+            <span className="font-bold">{totalPrice}</span>
           )}
+
+          <span
+            className={
+              doesProductHaveDiscount
+                ? "text-xs line-through opacity-75"
+                : "font-bold"
+            }
+          >
+            {basePrice}
+          </span>
         </div>
         {/* TODO: RATING */}
       </div>
