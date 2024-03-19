@@ -3,7 +3,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 
+import { Footer } from "@/layout/Footer/Footer";
 import Header from "@/layout/Header/Header";
+import { cn } from "@/lib/utils";
 import { AuthProvider } from "@/providers/auth";
 
 const manrope = Manrope({ subsets: ["latin"] });
@@ -20,10 +22,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={manrope.className}>
+      <body className={cn("flex flex-col", manrope.className)}>
         <AuthProvider>
           <Header />
-          {children}
+          <div className="grow">{children}</div>
+          <Footer />
         </AuthProvider>
       </body>
     </html>
