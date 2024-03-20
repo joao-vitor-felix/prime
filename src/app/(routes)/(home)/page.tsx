@@ -36,10 +36,10 @@ export default async function Home() {
 
       <CategoriesButtonList />
 
-      <div className="flex flex-col gap-5">
+      <section className="flex flex-col gap-5" aria-label="Ofertas">
         <Title>OFERTAS</Title>
         <ProductList products={deals} />
-      </div>
+      </section>
 
       <Link href="#" aria-label="Mouses com até 55% de desconto">
         <PromoBanner
@@ -51,10 +51,10 @@ export default async function Home() {
         />
       </Link>
 
-      <div className="flex flex-col gap-5">
+      <section className="flex flex-col gap-5" aria-label="Teclados">
         <Title>TECLADOS</Title>
         <ProductList products={keyboards} />
-      </div>
+      </section>
 
       <Link href="#" aria-label="Fones com até 55% de desconto">
         <PromoBanner
@@ -66,10 +66,10 @@ export default async function Home() {
         />
       </Link>
 
-      <div className="flex flex-col gap-5">
+      <section className="mb-5 flex flex-col gap-5" aria-label="Mouses">
         <Title>MOUSES</Title>
         <ProductList products={mouses} />
-      </div>
+      </section>
     </main>
   );
 }
