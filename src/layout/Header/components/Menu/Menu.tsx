@@ -75,7 +75,7 @@ const Menu = () => {
       <MenuItem
         href="/category"
         icon={<Library size={18} className="text-primary" />}
-        linkChildren="categorias"
+        linkChildren="Categorias"
         aria-label="Categorias de produtos"
       />
 
