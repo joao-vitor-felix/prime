@@ -11,16 +11,19 @@ const Category = async () => {
   const categories = await prisma.category.findMany();
 
   return (
-    <section className="flex flex-col gap-7 px-5 py-8">
+    <main className="flex flex-col gap-7 px-5 py-8">
       <TitleBadged icon={<Library size={20} className="text-primary" />}>
         Categorias
       </TitleBadged>
-      <div className="grid grid-cols-2 justify-items-center gap-8 md:grid-cols-4 lg:grid-cols-category-item-grid">
+      <section
+        className="grid grid-cols-2 justify-items-center gap-8 md:grid-cols-4 lg:grid-cols-category-item-grid"
+        aria-label="Categorias"
+      >
         {categories.map(category => (
           <CategoryItem category={category} key={category.id} />
         ))}
-      </div>
-    </section>
+      </section>
+    </main>
   );
 };
 export default Category;
