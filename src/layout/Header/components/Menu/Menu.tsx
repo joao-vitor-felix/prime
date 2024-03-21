@@ -45,7 +45,7 @@ const Menu = () => {
         </div>
       )}
 
-      <Separator className="mb-2 mt-2" />
+      <Separator className="my-2" />
 
       {!isUserAuthenticated && (
         <Button
@@ -73,10 +73,10 @@ const Menu = () => {
       />
 
       <MenuItem
-        href="#"
+        href="/category"
         icon={<Library size={18} className="text-primary" />}
-        linkChildren="Catálogo"
-        aria-label="Catálogo de produtos"
+        linkChildren="categorias"
+        aria-label="Categorias de produtos"
       />
 
       {isUserAuthenticated && (
