@@ -13,6 +13,13 @@ const config = {
       }
     },
     extend: {
+      backgroundImage: {
+        "category-item-gradient":
+          "linear-gradient(45deg, rgb(26, 152, 255) 0%, rgba(26, 152, 255, .45) 100%)"
+      },
+      gridTemplateColumns: {
+        "category-item-grid": "repeat(auto-fit, 160px)"
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
