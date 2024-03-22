@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getCategoryWithProducts } from "@/actions/category/getCategoryWithProducts";
 import { ProductList } from "@/components/ProductList";
 import { Title } from "@/components/typography/Title";
+import { Container } from "@/components/ui";
 import { prisma } from "@/lib/prisma";
 
 import { CategoriesButtonList } from "./components/CategoriesButtonList";
@@ -23,7 +24,7 @@ export default async function Home() {
   const mouses = await getCategoryWithProducts("mouses");
 
   return (
-    <main className="mt-7 flex flex-col gap-7 px-5">
+    <Container>
       <Link href="#" aria-label="Produtos com até 55% de desconto">
         <PromoBanner
           src="banner-discount-mobile.svg"
@@ -70,6 +71,6 @@ export default async function Home() {
         <Title>MOUSES</Title>
         <ProductList products={mouses.products} />
       </section>
-    </main>
+    </Container>
   );
 }

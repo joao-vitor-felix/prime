@@ -1,6 +1,7 @@
 import { Library } from "lucide-react";
 
 import { TitleBadged } from "@/components/typography/TitleBadged";
+import { Container } from "@/components/ui";
 import { prisma } from "@/lib/prisma";
 
 import { CategoryItem } from "./components/CategoryItem";
@@ -11,7 +12,7 @@ const Category = async () => {
   const categories = await prisma.category.findMany();
 
   return (
-    <main className="flex flex-col gap-7 px-5 py-8">
+    <Container>
       <TitleBadged icon={<Library size={20} className="text-primary" />}>
         Categorias
       </TitleBadged>
@@ -23,7 +24,7 @@ const Category = async () => {
           <CategoryItem category={category} key={category.id} />
         ))}
       </section>
-    </main>
+    </Container>
   );
 };
 export default Category;
