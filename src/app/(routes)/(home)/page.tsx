@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { getProductsByCategory } from "@/actions/getProductsByCategory";
+import { getCategoryWithProducts } from "@/actions/category/getCategoryWithProducts";
 import { ProductList } from "@/components/ProductList";
 import { Title } from "@/components/typography/Title";
 import { prisma } from "@/lib/prisma";
@@ -19,8 +19,8 @@ export default async function Home() {
     }
   });
 
-  const keyboards = await getProductsByCategory("keyboards");
-  const mouses = await getProductsByCategory("mouses");
+  const keyboards = await getCategoryWithProducts("keyboards");
+  const mouses = await getCategoryWithProducts("mouses");
 
   return (
     <main className="mt-7 flex flex-col gap-7 px-5">
@@ -53,7 +53,7 @@ export default async function Home() {
 
       <section className="flex flex-col gap-5" aria-label="Teclados">
         <Title>TECLADOS</Title>
-        <ProductList products={keyboards} />
+        <ProductList products={keyboards.products} />
       </section>
 
       <Link href="#" aria-label="Fones com até 55% de desconto">
@@ -68,7 +68,7 @@ export default async function Home() {
 
       <section className="mb-5 flex flex-col gap-5" aria-label="Mouses">
         <Title>MOUSES</Title>
-        <ProductList products={mouses} />
+        <ProductList products={mouses.products} />
       </section>
     </main>
   );
