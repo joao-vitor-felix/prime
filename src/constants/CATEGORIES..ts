@@ -1,4 +1,4 @@
-const CATEGORIES = [
+export const CATEGORIES = [
   "keyboards",
   "monitors",
   "headphones",
