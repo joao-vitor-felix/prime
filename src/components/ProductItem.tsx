@@ -17,7 +17,10 @@ export const ProductItem = ({ product }: ProductItemProps) => {
   const basePrice = formatPrice(Number(product.basePrice));
 
   return (
-    <Link className="relative flex min-w-44 flex-col gap-4" href="#">
+    <Link
+      className="relative flex min-h-60 min-w-40 max-w-40 flex-col gap-4"
+      href="#"
+    >
       <div className="flex h-52 min-h-28 items-center justify-center rounded-lg bg-accent">
         <Image
           alt={`Imagem do produto ${product.name}`}
@@ -31,7 +34,7 @@ export const ProductItem = ({ product }: ProductItemProps) => {
       {doesProductHaveDiscount && (
         <DiscountBadge
           discount={product.discountPercentage}
-          className="absolute left-2 top-3 px-[0.5rem]"
+          className="absolute left-2 top-3 px-2"
         />
       )}
       <div className="flex flex-col">

@@ -9,7 +9,7 @@ type CategoryItemProps = {
 export const CategoryItem = ({ category }: CategoryItemProps) => {
   return (
     <Link
-      className="flex h-48 w-40 flex-col"
+      className="flex min-h-48 min-w-40 max-w-40 flex-col"
       href={`/category/${category.slug}`}
     >
       <div className="flex size-full items-center justify-center rounded-t-lg bg-category-item-gradient">
