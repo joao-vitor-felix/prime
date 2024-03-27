@@ -16,7 +16,10 @@ export const TitleBadged = ({
 }: BadgeTitleProps) => {
   return (
     <Badge
-      className={cn("flex w-fit gap-1 px-3 py-1", className)}
+      className={cn(
+        "flex w-fit gap-1 px-3 py-1 border-[1px] border-primary",
+        className
+      )}
       variant="outline"
       {...props}
     >
