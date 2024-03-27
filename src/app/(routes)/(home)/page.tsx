@@ -38,6 +38,7 @@ export default async function Home() {
       <CategoriesButtonList />
 
       <section className="flex flex-col gap-5" aria-label="Ofertas">
+        {/* TODO: levar para página de ofertas */}
         <Title>OFERTAS</Title>
         <ProductList products={deals} />
       </section>
@@ -53,6 +54,7 @@ export default async function Home() {
       </Link>
 
       <section className="flex flex-col gap-5" aria-label="Teclados">
+        {/* TODO: levar para página de teclados */}
         <Title>TECLADOS</Title>
         <ProductList products={keyboards.products} />
       </section>
@@ -68,6 +70,7 @@ export default async function Home() {
       </Link>
 
       <section className="mb-5 flex flex-col gap-5" aria-label="Mouses">
+        {/* TODO: levar para página de mouses */}
         <Title>MOUSES</Title>
         <ProductList products={mouses.products} />
       </section>
