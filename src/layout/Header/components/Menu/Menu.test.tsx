@@ -1,21 +1,26 @@
-import { describe, expect, it } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
-import { SessionContextValue, useSession } from "next-auth/react";
+
+import { mockAuthState } from "@/__tests__/utils/mockAuthState";
+import { Sheet } from "@/components/ui";
 
 import Menu from "./Menu";
 
-jest.mock("next-auth/react");
-
 function renderComponent() {
-  render(<Menu />);
+  render(
+    <Sheet>
+      <Menu />;
+    </Sheet>
+  );
 
   const loginButton = screen.queryByRole("button", {
     name: /entrar na sua conta/i
   });
   const homeLink = screen.getByRole("link", { name: /página inicial/i });
-  const offerLink = screen.getByRole("link", { name: /ofertas disponíveis/i });
+  const offerLink = screen.getByRole("link", {
+    name: /ofertas/i
+  });
   const catalogLink = screen.getByRole("link", {
-    name: /catálogo de produtos/i
+    name: /categorias/i
   });
 
   const ordersLink = screen.queryByRole("link", { name: /meus pedidos/i });
@@ -39,10 +44,10 @@ function renderComponent() {
 
 describe("Menu", () => {
   it("should not display authenticated links while user is logged out", () => {
-    (useSession as jest.Mock<SessionContextValue>).mockReturnValue({
-      status: "unauthenticated",
+    mockAuthState({
       data: null,
-      update: jest.fn()
+      update: vi.fn(),
+      status: "unauthenticated"
     });
 
     const {
@@ -65,17 +70,17 @@ describe("Menu", () => {
   });
 
   it("should display the authenticated links and user data while user is logged out", async () => {
-    (useSession as jest.Mock<SessionContextValue>).mockReturnValue({
-      status: "authenticated",
+    mockAuthState({
       data: {
         user: {
-          name: "John Doe",
-          email: "johndoe@john.com",
-          image: "https://john.com/john"
+          email: "john@john.com",
+          image: "https://john.com/john.jpg",
+          name: "John Doe"
         },
-        expires: "2021-12-31T12:00:00.000Z"
+        expires: "2023-10-10T00:00:00.000Z"
       },
-      update: jest.fn()
+      update: vi.fn(),
+      status: "authenticated"
     });
 
     const {
