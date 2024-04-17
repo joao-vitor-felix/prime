@@ -1,11 +1,9 @@
-import { describe, expect, it } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { SessionContextValue, useSession } from "next-auth/react";
+
+import { mockAuthState } from "@/__tests__/utils/mockAuthState";
 
 import Header from "./Header";
-
-jest.mock("next-auth/react");
 
 const renderComponent = () => {
   render(<Header />);
@@ -17,10 +15,10 @@ const renderComponent = () => {
 
 describe("Header", () => {
   it("should open the Menu when button is clicked", async () => {
-    (useSession as jest.Mock<SessionContextValue>).mockReturnValue({
-      status: "unauthenticated",
+    mockAuthState({
       data: null,
-      update: jest.fn()
+      update: vi.fn(),
+      status: "unauthenticated"
     });
 
     const { menu } = renderComponent();
@@ -31,10 +29,10 @@ describe("Header", () => {
     });
     const homeLink = screen.getByRole("link", { name: /página inicial/i });
     const offerLink = screen.getByRole("link", {
-      name: /ofertas disponíveis/i
+      name: /ofertas/i
     });
     const catalogLink = screen.getByRole("link", {
-      name: /catálogo de produtos/i
+      name: /categorias/i
     });
     expect(loginButton).toBeInTheDocument();
     expect(homeLink).toBeInTheDocument();
