@@ -9,7 +9,12 @@ type MenuItemProps = {
   linkChildren: ReactNode;
 } & ComponentPropsWithRef<"a">;
 
-const MenuItem = ({ linkChildren, href, icon, ...props }: MenuItemProps) => {
+export const MenuItem = ({
+  linkChildren,
+  href,
+  icon,
+  ...props
+}: MenuItemProps) => {
   return (
     <SheetClose asChild>
       <Button variant="outline" asChild>
@@ -21,5 +26,3 @@ const MenuItem = ({ linkChildren, href, icon, ...props }: MenuItemProps) => {
     </SheetClose>
   );
 };
-
-export default MenuItem;

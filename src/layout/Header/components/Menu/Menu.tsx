@@ -19,7 +19,7 @@ import {
   Separator
 } from "@/components/ui";
 
-import MenuItem from "../MenuItem";
+import { MenuItem } from "../MenuItem";
 
 const Menu = () => {
   const { data, status } = useSession();
