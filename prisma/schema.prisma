@@ -18,21 +18,28 @@ model Category {
 }
 
 model Product {
-  id                 String         @id @default(uuid())
+  id                 String           @id @default(uuid())
   name               String
   slug               String
   brandId            String?
-  Brand              Brand?         @relation(fields: [brandId], references: [id])
+  Brand              Brand?           @relation(fields: [brandId], references: [id])
   description        String
+  condition          ProductCondition @default(NEW)
   imageUrls          String[]
-  basePrice          Decimal        @db.Decimal(8, 2)
-  discountPercentage Int            @default(0)
+  basePrice          Decimal          @db.Decimal(8, 2)
+  discountPercentage Int              @default(0)
+  stock              Int              @default(999)
   categoryId         String
-  category           Category       @relation(fields: [categoryId], references: [id])
+  category           Category         @relation(fields: [categoryId], references: [id])
   orderProducts      OrderProduct[]
   userId             String?
-  User               User?          @relation(fields: [userId], references: [id])
+  User               User?            @relation(fields: [userId], references: [id])
   reviews            Review[]
+}
+
+enum ProductCondition {
+  NEW
+  USED
 }
 
 model Brand {
