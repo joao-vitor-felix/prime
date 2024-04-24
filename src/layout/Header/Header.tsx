@@ -13,7 +13,7 @@ import Menu from "./components/Menu/Menu";
 
 const Header = () => {
   return (
-    <header className="rounded-lg border shadow-sm">
+    <header className="border shadow-sm">
       <div className="flex items-center justify-between p-[1.875rem]">
         <Sheet>
           <SheetTrigger asChild>
