@@ -19,7 +19,7 @@ export const ProductItem = ({ product }: ProductItemProps) => {
   return (
     <Link
       className="relative flex min-h-60 min-w-40 max-w-40 flex-col gap-4"
-      href="#"
+      href={`/product/${product.slug}`}
     >
       <div className="flex h-44 items-center justify-center rounded-lg bg-accent">
         <Image
