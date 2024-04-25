@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { redirect } from "next/navigation";
 
 import { getProductBySlug } from "@/actions/product/getProductBySlug";
@@ -13,6 +14,16 @@ type ProductProps = {
     slug: string;
   };
 };
+
+export async function generateMetadata({
+  params: { slug }
+}: ProductProps): Promise<Metadata> {
+  const product = await getProductBySlug(slug);
+
+  return {
+    title: `${product?.name} | Prime`
+  };
+}
 
 const Product = async ({ params: { slug } }: ProductProps) => {
   const product = await getProductBySlug(slug);

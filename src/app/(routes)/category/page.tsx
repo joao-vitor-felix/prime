@@ -1,4 +1,5 @@
 import { Library } from "lucide-react";
+import { Metadata } from "next";
 
 import { TitleBadged } from "@/components/typography/TitleBadged";
 import { Container } from "@/components/ui";
@@ -7,6 +8,11 @@ import { prisma } from "@/lib/prisma";
 import { CategoryItem } from "./components/CategoryItem";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  title: "Categorias | Prime",
+  description: "Categorias de produtos"
+};
 
 const Category = async () => {
   const categories = await prisma.category.findMany();

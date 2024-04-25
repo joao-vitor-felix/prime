@@ -1,4 +1,5 @@
 import { ArrowLeft } from "lucide-react";
+import { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
@@ -15,9 +16,25 @@ type CategoryProductsProps = {
   };
 };
 
-const CategoryProducts = async ({ params }: CategoryProductsProps) => {
-  const slug = params.slug;
+export async function generateMetadata({
+  params: { slug }
+}: CategoryProductsProps): Promise<Metadata> {
+  const isValidCategory = CATEGORIES.includes(slug);
 
+  if (!isValidCategory) {
+    return { title: "Produto | Prime" };
+  }
+
+  const category = await getCategoryWithProducts(slug);
+
+  return {
+    title: `${category.name} | Prime`
+  };
+}
+
+const CategoryProducts = async ({
+  params: { slug }
+}: CategoryProductsProps) => {
   const isValidCategory = CATEGORIES.includes(slug);
 
   if (!isValidCategory) {
