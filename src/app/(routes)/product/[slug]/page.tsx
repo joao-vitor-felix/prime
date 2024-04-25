@@ -24,7 +24,7 @@ const Product = async ({ params: { slug } }: ProductProps) => {
     <>
       <ProductImage name={product.name} images={product.imageUrls} />
       <Container>
-        <ProductDetails product={product} />
+        <ProductDetails product={JSON.parse(JSON.stringify(product))} />
         <div className="flex flex-col gap-5">
           <Title>PRODUTOS RECOMENDADOS</Title>
           <ProductList products={product.category.products} />
