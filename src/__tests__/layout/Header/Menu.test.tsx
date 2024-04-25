@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { mockAuthState } from "@/__tests__/utils/mockAuthState";
 import { Sheet } from "@/components/ui";
 
-import Menu from "./Menu";
+import { Menu } from "../../../layout/Header/components/Menu";
 
 function renderComponent() {
   render(

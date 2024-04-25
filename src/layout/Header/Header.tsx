@@ -9,9 +9,9 @@ import {
   SheetTrigger
 } from "@/components/ui";
 
-import Menu from "./components/Menu/Menu";
+import { Menu } from "./components/Menu";
 
-const Header = () => {
+export const Header = () => {
   return (
     <header className="border shadow-sm">
       <div className="flex items-center justify-between p-[1.875rem]">
@@ -44,5 +44,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;

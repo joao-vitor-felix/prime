@@ -19,9 +19,9 @@ import {
   Separator
 } from "@/components/ui";
 
-import { MenuItem } from "../MenuItem";
+import { MenuItem } from "./MenuItem";
 
-const Menu = () => {
+export const Menu = () => {
   const { data, status } = useSession();
 
   const isUserAuthenticated = status === "authenticated";
@@ -107,5 +107,3 @@ const Menu = () => {
     </div>
   );
 };
-
-export default Menu;

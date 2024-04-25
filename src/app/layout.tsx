@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 
 import { Footer } from "@/layout/Footer/Footer";
-import Header from "@/layout/Header/Header";
+import { Header } from "@/layout/Header/Header";
 import { cn } from "@/lib/utils";
 import { AuthProvider } from "@/providers/auth";
 

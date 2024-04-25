@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 
 import { mockAuthState } from "@/__tests__/utils/mockAuthState";
 
-import Header from "./Header";
+import { Header } from "../../../layout/Header/Header";
 
 const renderComponent = () => {
   render(<Header />);
