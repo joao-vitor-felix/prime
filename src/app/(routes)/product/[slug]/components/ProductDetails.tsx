@@ -1,3 +1,5 @@
+"use client";
+
 import { DiscountBadge } from "@/components/DiscountBadge";
 import { Button } from "@/components/ui";
 import { CONDITION } from "@/constants/CONDITION";
@@ -11,9 +13,16 @@ type ProductDetailsProps = {
 export const ProductDetails = ({ product }: ProductDetailsProps) => {
   const DoesProductHasStock = product.stock > 0;
   const DoesProductHasDiscount = product.discountPercentage > 0;
+  const buttonText = DoesProductHasStock
+    ? "Adicionar ao carrinho"
+    : "Produto indisponível";
 
   const totalPrice = formatPrice(product.totalPrice);
   const basePrice = formatPrice(Number(product.basePrice));
+
+  const handleAddToCart = () => {
+    if (!DoesProductHasStock) return;
+  };
 
   return (
     <div className="flex flex-col gap-4">
@@ -53,7 +62,13 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
         </p>
       </div>
 
-      <Button className="font-bold">Adicionar ao carrinho</Button>
+      <Button
+        className={`font-bold ${DoesProductHasStock ? "bg-primary" : "bg-light-gray"}`}
+        onClick={handleAddToCart}
+        disabled={!DoesProductHasStock}
+      >
+        {buttonText}
+      </Button>
     </div>
   );
 };
