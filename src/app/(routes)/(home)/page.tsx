@@ -43,7 +43,7 @@ export default async function Home() {
         <ProductList products={deals} />
       </section>
 
-      <Link href="#" aria-label="Mouses com até 55% de desconto">
+      <Link href="/category/mouses" aria-label="Mouses com até 55% de desconto">
         <PromoBanner
           src="banner-mouses-mobile.svg"
           width={0}
@@ -59,7 +59,10 @@ export default async function Home() {
         <ProductList products={keyboards.products} />
       </section>
 
-      <Link href="#" aria-label="Fones com até 55% de desconto">
+      <Link
+        href="/category/headphones"
+        aria-label="Fones com até 55% de desconto"
+      >
         <PromoBanner
           src="banner-fones-mobile.svg"
           width={0}
