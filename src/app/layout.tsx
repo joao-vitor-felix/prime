@@ -6,7 +6,7 @@ import { Manrope } from "next/font/google";
 import { Footer } from "@/layout/Footer/Footer";
 import { Header } from "@/layout/Header/Header";
 import { cn } from "@/lib/utils";
-import { AuthProvider } from "@/providers/auth";
+import { AuthProvider } from "@/providers/Auth";
 import { CartContextProvider } from "@/providers/Cart";
 
 const manrope = Manrope({ subsets: ["latin"] });
