@@ -1,9 +1,13 @@
 "use client";
 
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
+
 import { DiscountBadge } from "@/components/DiscountBadge";
 import { Button } from "@/components/ui";
 import { CONDITION } from "@/constants/CONDITION";
 import { formatPrice } from "@/helpers/formatPrice";
+import { useCartContext } from "@/hooks/useCartContext";
 import { ProductWithTotalPrice } from "@/types/ProductWithTotalPrice";
 
 type ProductDetailsProps = {
@@ -20,8 +24,25 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
   const totalPrice = formatPrice(product.totalPrice);
   const basePrice = formatPrice(Number(product.basePrice));
 
+  const { addToCart } = useCartContext();
+
+  const [quantity, setQuantity] = useState(1);
+
+  const handleIncreaseQuantity = () => {
+    setQuantity(prev => prev + 1);
+  };
+
+  const handleDecreaseQuantity = () => {
+    if (quantity > 1) {
+      setQuantity(prev => prev - 1);
+    }
+  };
+
   const handleAddToCart = () => {
     if (!DoesProductHasStock) return;
+
+    addToCart({ ...product, quantity: quantity });
+    setQuantity(1);
   };
 
   return (
@@ -50,8 +71,30 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
               <h2 className="text-lg font-bold">{basePrice}</h2>
             )}
           </div>
-          {/* TODO: Quantidade */}
-          {/* <div className="flex flex-col">QUANTIDADE</div> */}
+          <div className="flex items-center gap-2">
+            <Button
+              variant="link"
+              className="size-8 p-0"
+              onClick={handleDecreaseQuantity}
+              aria-label={`Diminuir quantidade do produto ${product.name}`}
+            >
+              <ChevronLeft size={20} />
+            </Button>
+            <span
+              className="text-sm"
+              aria-label={`Quantidade do produto ${product.name}`}
+            >
+              {quantity}
+            </span>
+            <Button
+              variant="link"
+              className="size-8 p-0"
+              onClick={handleIncreaseQuantity}
+              aria-label={`Aumentar quantidade do produto ${product.name}`}
+            >
+              <ChevronRight size={20} />
+            </Button>
+          </div>
         </>
       )}
 
