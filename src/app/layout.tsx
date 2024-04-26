@@ -7,6 +7,7 @@ import { Footer } from "@/layout/Footer/Footer";
 import { Header } from "@/layout/Header/Header";
 import { cn } from "@/lib/utils";
 import { AuthProvider } from "@/providers/auth";
+import { CartContextProvider } from "@/providers/Cart";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
@@ -24,8 +25,10 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={cn("flex flex-col", manrope.className)}>
         <AuthProvider>
-          <Header />
-          <div className="grow">{children}</div>
+          <CartContextProvider>
+            <Header />
+            <div className="grow">{children}</div>
+          </CartContextProvider>
           <Footer />
         </AuthProvider>
       </body>

@@ -1,4 +1,4 @@
-import { BadgeCheck, Menu as MenuIcon, ShoppingCart } from "lucide-react";
+import { BadgeCheck, Menu as MenuIcon } from "lucide-react";
 import Link from "next/link";
 
 import {
@@ -9,6 +9,7 @@ import {
   SheetTrigger
 } from "@/components/ui";
 
+import { Cart } from "./components/Cart";
 import { Menu } from "./components/Menu";
 
 export const Header = () => {
@@ -32,13 +33,12 @@ export const Header = () => {
           <BadgeCheck className="text-primary" />
           <span className="font-bold">Prime</span>
         </Link>
-
         <Button
           variant="outline"
           size="icon"
           aria-label="Abrir carrinho de compras"
         >
-          <ShoppingCart />
+          <Cart />
         </Button>
       </div>
     </header>
