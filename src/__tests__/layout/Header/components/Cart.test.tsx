@@ -18,14 +18,14 @@ const renderComponent = async (cart: CartProduct[]) => {
   const cartTitle = screen.getByRole("heading", {
     name: /carrinho/i
   });
-  const emptyCartContent = screen.queryByText(/Não há produtos no carrinho./i);
+  const emptyCartMessage = screen.queryByText(/Não há produtos no carrinho./i);
   const subtotalAmount = screen.queryByTestId("cart-subtotal-amount");
   const discountAmount = screen.queryByTestId("cart-discount-amount");
   const totalAmount = screen.queryByTestId("cart-total-amount");
 
   return {
     cartTitle,
-    emptyCartContent,
+    emptyCartMessage,
     subtotalAmount,
     discountAmount,
     totalAmount
@@ -36,14 +36,14 @@ describe("Cart", () => {
   it("should render Cart message when there's no products", async () => {
     const {
       cartTitle,
-      emptyCartContent,
+      emptyCartMessage,
       discountAmount,
       subtotalAmount,
       totalAmount
     } = await renderComponent([]);
 
     expect(cartTitle).toBeInTheDocument();
-    expect(emptyCartContent).toBeInTheDocument();
+    expect(emptyCartMessage).toBeInTheDocument();
     expect(discountAmount).not.toBeInTheDocument();
     expect(subtotalAmount).not.toBeInTheDocument();
     expect(totalAmount).not.toBeInTheDocument();
@@ -62,7 +62,7 @@ describe("Cart", () => {
 
     const {
       cartTitle,
-      emptyCartContent,
+      emptyCartMessage,
       discountAmount,
       subtotalAmount,
       totalAmount
@@ -87,7 +87,7 @@ describe("Cart", () => {
     });
 
     expect(cartTitle).toBeInTheDocument();
-    expect(emptyCartContent).not.toBeInTheDocument();
+    expect(emptyCartMessage).not.toBeInTheDocument();
     expect(cartImage).toBeInTheDocument();
     expect(name).toBeInTheDocument();
     expect(basePrice).toBeInTheDocument();
