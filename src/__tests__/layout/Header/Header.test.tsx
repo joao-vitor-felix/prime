@@ -8,9 +8,10 @@ import { Header } from "../../../layout/Header/Header";
 const renderComponent = () => {
   render(<Header />);
 
-  const menu = screen.getByRole("button", { name: /abrir menu/i });
+  const menu = screen.getByRole("button", { name: /menu/i });
+  const cart = screen.getByRole("button", { name: /carrinho de compras/i });
 
-  return { menu };
+  return { menu, cart };
 };
 
 describe("Header", () => {
@@ -40,5 +41,17 @@ describe("Header", () => {
     expect(catalogLink).toBeInTheDocument();
   });
 
-  //TODO: Adicionar teste do carrinho de compras
+  it("should open the Cart when button is clicked", async () => {
+    const { cart } = renderComponent();
+
+    await userEvent.click(cart);
+
+    const cartTitle = screen.getByRole("heading", {
+      name: /carrinho/i
+    });
+
+    const cartContent = screen.getByText(/Não há produtos no carrinho./i);
+    expect(cartTitle).toBeInTheDocument();
+    expect(cartContent).toBeInTheDocument();
+  });
 });
