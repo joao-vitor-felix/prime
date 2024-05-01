@@ -221,4 +221,34 @@ describe("Cart", () => {
     const emptyCartMessage = screen.getByText(/Não há produtos no carrinho./i);
     expect(emptyCartMessage).toBeInTheDocument();
   });
+
+  it("should output correct subtotal, total and discount values", async () => {
+    const cart: CartProduct[] = [
+      {
+        id: "1",
+        name: "Product 1",
+        basePrice: new Prisma.Decimal(100),
+        discountPercentage: 10,
+        totalPrice: 90,
+        imageUrls: ["https://example.com/image.jpg"],
+        quantity: 1
+      },
+      {
+        id: "2",
+        name: "Product 2",
+        basePrice: new Prisma.Decimal(500),
+        discountPercentage: 10,
+        totalPrice: 450,
+        imageUrls: ["https://example.com/image.jpg"],
+        quantity: 4
+      }
+    ];
+
+    const { subtotalAmount, discountAmount, totalAmount } =
+      await renderComponent(cart);
+
+    expect(subtotalAmount).toHaveTextContent("R$ 2.100,00");
+    expect(discountAmount).toHaveTextContent("- R$ 210,00");
+    expect(totalAmount).toHaveTextContent("R$ 1.890,00");
+  });
 });
