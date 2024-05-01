@@ -117,11 +117,34 @@ describe("Cart", () => {
     const basePriceFromTotalPrice = screen.queryByTestId(
       "cart-item-base-price"
     );
-
     const basePrice = screen.getByRole("heading", { name: /preço base/i });
 
     expect(basePrice).toBeInTheDocument();
     expect(totalPrice).not.toBeInTheDocument();
     expect(basePriceFromTotalPrice).not.toBeInTheDocument();
+  });
+
+  it("should show total price together with base price while not show base price alone on products with discount", async () => {
+    const item: CartProduct = {
+      id: "1",
+      name: "Product 1",
+      basePrice: new Prisma.Decimal(100),
+      discountPercentage: 10,
+      totalPrice: 90,
+      imageUrls: ["https://example.com/image.jpg"],
+      quantity: 1
+    };
+
+    await renderComponent([item]);
+
+    const totalPrice = screen.queryByRole("heading", { name: /preço total/i });
+    const basePriceFromTotalPrice = screen.queryByTestId(
+      "cart-item-base-price"
+    );
+    const basePrice = screen.queryByRole("heading", { name: /preço base/i });
+
+    expect(basePrice).not.toBeInTheDocument();
+    expect(totalPrice).toBeInTheDocument();
+    expect(basePriceFromTotalPrice).toBeInTheDocument();
   });
 });
