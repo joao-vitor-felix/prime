@@ -24,7 +24,7 @@ export const TitleBadged = ({
       {...props}
     >
       {icon}
-      <span className="text-base font-bold uppercase">{children}</span>
+      <h3 className="text-base font-bold uppercase">{children}</h3>
     </Badge>
   );
 };
