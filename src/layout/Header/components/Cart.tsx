@@ -64,7 +64,9 @@ export const Cart = () => {
           {cart.map(product => (
             <CartItem key={product.id} product={product} />
           ))}
-          {isCartEmpty && <span>Não há produtos no carrinho.</span>}
+          {isCartEmpty && (
+            <span className="text-sm">Não há produtos no carrinho.</span>
+          )}
         </div>
 
         {!isCartEmpty && (
