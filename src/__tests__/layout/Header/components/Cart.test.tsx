@@ -33,7 +33,7 @@ const renderComponent = async (cart: CartProduct[]) => {
 };
 
 describe("Cart", () => {
-  it("should render the Cart message when there's no products", async () => {
+  it("should render Cart message when there's no products", async () => {
     const {
       cartTitle,
       emptyCartContent,
@@ -49,7 +49,7 @@ describe("Cart", () => {
     expect(totalAmount).not.toBeInTheDocument();
   });
 
-  it("should render the Cart correctly", async () => {
+  it("should render Cart correctly", async () => {
     const item: CartProduct = {
       id: "1",
       name: "Product 1",
@@ -98,5 +98,30 @@ describe("Cart", () => {
     expect(subtotalAmount).toHaveTextContent("R$ 100,00");
     expect(totalAmount).toHaveTextContent("R$ 90,00");
     expect(buyButton).toBeInTheDocument();
+  });
+
+  it("should show base price and not show total price together with base price on products without discount", async () => {
+    const item: CartProduct = {
+      id: "1",
+      name: "Product 1",
+      basePrice: new Prisma.Decimal(100),
+      discountPercentage: 0,
+      totalPrice: 100,
+      imageUrls: ["https://example.com/image.jpg"],
+      quantity: 1
+    };
+
+    await renderComponent([item]);
+
+    const totalPrice = screen.queryByRole("heading", { name: /preço total/i });
+    const basePriceFromTotalPrice = screen.queryByTestId(
+      "cart-item-base-price"
+    );
+
+    const basePrice = screen.getByRole("heading", { name: /preço base/i });
+
+    expect(basePrice).toBeInTheDocument();
+    expect(totalPrice).not.toBeInTheDocument();
+    expect(basePriceFromTotalPrice).not.toBeInTheDocument();
   });
 });
