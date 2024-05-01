@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, PropsWithChildren, useState } from "react";
+import { createContext, ReactNode, useState } from "react";
 
 import { ProductWithTotalPrice } from "@/types/ProductWithTotalPrice";
 
@@ -8,7 +8,7 @@ export type CartProduct = ProductWithTotalPrice & {
   quantity: number;
 };
 
-type CartContext = {
+export type CartContextType = {
   cart: CartProduct[];
   addToCart: (product: CartProduct) => void;
   incrementQuantity: (product: CartProduct) => void;
@@ -16,7 +16,7 @@ type CartContext = {
   clearFromCart: (product: CartProduct) => void;
 };
 
-export const CartContext = createContext<CartContext>({
+export const CartContext = createContext<CartContextType>({
   cart: [],
   addToCart: () => {},
   incrementQuantity: () => {},
@@ -24,8 +24,16 @@ export const CartContext = createContext<CartContext>({
   clearFromCart: () => {}
 });
 
-export const CartContextProvider = ({ children }: PropsWithChildren) => {
-  const [cart, setCart] = useState<CartProduct[]>([]);
+type CartContextProviderProps = {
+  children: ReactNode;
+  cartValue?: CartProduct[];
+};
+
+export const CartContextProvider = ({
+  children,
+  cartValue = []
+}: CartContextProviderProps) => {
+  const [cart, setCart] = useState<CartProduct[]>(cartValue);
 
   const addToCart = (product: CartProduct) => {
     const isProductAlreadyOnCart = cart.some(
