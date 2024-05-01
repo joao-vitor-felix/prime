@@ -37,13 +37,21 @@ export const CartItem = ({ product }: CartItemProps) => {
         <div className="flex flex-col">
           {DoesProductHasDiscount ? (
             <div className="flex items-center gap-1">
-              <h2 className="text-sm font-bold">{totalPrice}</h2>
-              <span className="text-xs line-through opacity-75">
+              <h2 className="text-sm font-bold" aria-label="Preço total">
+                {totalPrice}
+              </h2>
+              <span
+                className="text-xs line-through opacity-75"
+                aria-label="Preço base"
+                data-testid="cart-item-base-price"
+              >
                 {basePrice}
               </span>
             </div>
           ) : (
-            <h2 className="text-sm font-bold">{basePrice}</h2>
+            <h2 className="text-sm font-bold" aria-label="Preço total">
+              {basePrice}
+            </h2>
           )}
         </div>
         <CartQuantity product={product} />

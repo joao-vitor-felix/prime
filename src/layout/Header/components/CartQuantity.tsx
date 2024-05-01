@@ -25,6 +25,7 @@ export const CartQuantity = ({ product }: CartQuantity) => {
       </Button>
       <span
         className="text-sm"
+        data-testid="cart-item-quantity"
         aria-label={`Quantidade do produto ${product.name}`}
       >
         {product.quantity}

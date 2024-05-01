@@ -75,7 +75,7 @@ export const Cart = () => {
               <Separator />
               <div className="flex justify-between">
                 <span>Subtotal</span>
-                <span>{subtotalAmount}</span>
+                <span data-testid="cart-subtotal-amount">{subtotalAmount}</span>
               </div>
 
               <Separator />
@@ -86,12 +86,14 @@ export const Cart = () => {
               <Separator />
               <div className="flex justify-between">
                 <span>Descontos</span>
-                <span>- {discountAmount}</span>
+                <span data-testid="cart-discount-amount">
+                  - {discountAmount}
+                </span>
               </div>
               <Separator />
               <div className="flex justify-between">
                 <span>Total</span>
-                <span>{totalAmount}</span>
+                <span data-testid="cart-total-amount">{totalAmount}</span>
               </div>
             </div>
             <Button>Finalizar compra</Button>
