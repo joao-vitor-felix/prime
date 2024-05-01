@@ -49,7 +49,7 @@ export const CartItem = ({ product }: CartItemProps) => {
               </span>
             </div>
           ) : (
-            <h2 className="text-sm font-bold" aria-label="Preço total">
+            <h2 className="text-sm font-bold" aria-label="Preço base">
               {basePrice}
             </h2>
           )}
