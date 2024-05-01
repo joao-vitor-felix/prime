@@ -1,3 +1,4 @@
+import { Prisma } from "@prisma/client";
 import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
@@ -17,9 +18,7 @@ const renderComponent = async (cart: CartProduct[]) => {
   const cartTitle = screen.getByRole("heading", {
     name: /carrinho/i
   });
-
   const emptyCartContent = screen.queryByText(/Não há produtos no carrinho./i);
-
   const subtotalAmount = screen.queryByTestId("cart-subtotal-amount");
   const discountAmount = screen.queryByTestId("cart-discount-amount");
   const totalAmount = screen.queryByTestId("cart-total-amount");
@@ -48,5 +47,56 @@ describe("Cart", () => {
     expect(discountAmount).not.toBeInTheDocument();
     expect(subtotalAmount).not.toBeInTheDocument();
     expect(totalAmount).not.toBeInTheDocument();
+  });
+
+  it("should render the Cart correctly", async () => {
+    const item: CartProduct = {
+      id: "1",
+      name: "Product 1",
+      basePrice: new Prisma.Decimal(100),
+      discountPercentage: 10,
+      totalPrice: 90,
+      imageUrls: ["https://example.com/image.jpg"],
+      quantity: 1
+    };
+
+    const {
+      cartTitle,
+      emptyCartContent,
+      discountAmount,
+      subtotalAmount,
+      totalAmount
+    } = await renderComponent([item]);
+
+    const cartImage = screen.queryByAltText(`Imagem do produto Product 1`);
+    const totalPrice = screen.queryByRole("heading", { name: /preço total/i });
+    const basePrice = screen.queryByTestId("cart-item-base-price");
+    const increaseButton = screen.queryByRole("button", {
+      name: `Aumentar quantidade do produto Product 1`
+    });
+    const quantity = screen.getByTestId("cart-item-quantity");
+    const decreaseButton = screen.queryByRole("button", {
+      name: `Diminuir quantidade do produto Product 1`
+    });
+    const removeButton = screen.queryByRole("button", {
+      name: `Remover produto Product 1`
+    });
+    const buyButton = screen.queryByRole("button", {
+      name: /finalizar compra/i
+    });
+
+    expect(cartTitle).toBeInTheDocument();
+    expect(emptyCartContent).not.toBeInTheDocument();
+    expect(cartImage).toBeInTheDocument();
+    expect(basePrice).toBeInTheDocument();
+    expect(totalPrice).toBeInTheDocument();
+    expect(decreaseButton).toBeInTheDocument();
+    expect(quantity).toBeInTheDocument();
+    expect(increaseButton).toBeInTheDocument();
+    expect(removeButton).toBeInTheDocument();
+    expect(discountAmount).toHaveTextContent("- R$ 10,00");
+    expect(subtotalAmount).toHaveTextContent("R$ 100,00");
+    expect(totalAmount).toHaveTextContent("R$ 90,00");
+    expect(buyButton).toBeInTheDocument();
   });
 });
