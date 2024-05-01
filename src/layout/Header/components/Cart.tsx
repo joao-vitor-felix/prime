@@ -50,7 +50,9 @@ export const Cart = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <ShoppingCart aria-label="Carrinho de compras" />
+        <Button variant="outline" size="icon" aria-label="Carrinho de compras">
+          <ShoppingCart />
+        </Button>
       </SheetTrigger>
 
       <SheetContent className="flex w-[90%] flex-col gap-8">

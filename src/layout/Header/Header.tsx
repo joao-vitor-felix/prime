@@ -18,7 +18,7 @@ export const Header = () => {
       <div className="flex items-center justify-between p-[1.875rem]">
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="outline" size="icon" aria-label="Abrir menu">
+            <Button variant="outline" size="icon" aria-label="Menu">
               <MenuIcon />
             </Button>
           </SheetTrigger>
@@ -33,13 +33,8 @@ export const Header = () => {
           <BadgeCheck className="text-primary" />
           <span className="font-bold">Prime</span>
         </Link>
-        <Button
-          variant="outline"
-          size="icon"
-          aria-label="Abrir carrinho de compras"
-        >
-          <Cart />
-        </Button>
+
+        <Cart />
       </div>
     </header>
   );
