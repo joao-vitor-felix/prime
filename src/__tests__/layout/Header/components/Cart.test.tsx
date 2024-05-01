@@ -147,4 +147,26 @@ describe("Cart", () => {
     expect(totalPrice).toBeInTheDocument();
     expect(basePriceFromTotalPrice).toBeInTheDocument();
   });
+
+  it("should increase product quantity when increase button is clicked", async () => {
+    const item: CartProduct = {
+      id: "1",
+      name: "Product 1",
+      basePrice: new Prisma.Decimal(100),
+      discountPercentage: 10,
+      totalPrice: 90,
+      imageUrls: ["https://example.com/image.jpg"],
+      quantity: 1
+    };
+
+    await renderComponent([item]);
+
+    const increaseButton = screen.getByRole("button", {
+      name: `Aumentar quantidade do produto Product 1`
+    });
+    const quantity = screen.getByTestId("cart-item-quantity");
+    expect(quantity).toHaveTextContent("1");
+    await userEvent.click(increaseButton);
+    expect(quantity).toHaveTextContent("2");
+  });
 });
