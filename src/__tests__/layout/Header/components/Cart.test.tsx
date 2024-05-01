@@ -69,6 +69,7 @@ describe("Cart", () => {
     } = await renderComponent([item]);
 
     const cartImage = screen.queryByAltText(`Imagem do produto Product 1`);
+    const name = screen.getByRole("heading", { name: /product 1/i });
     const totalPrice = screen.queryByRole("heading", { name: /preço total/i });
     const basePrice = screen.queryByTestId("cart-item-base-price");
     const increaseButton = screen.queryByRole("button", {
@@ -88,6 +89,7 @@ describe("Cart", () => {
     expect(cartTitle).toBeInTheDocument();
     expect(emptyCartContent).not.toBeInTheDocument();
     expect(cartImage).toBeInTheDocument();
+    expect(name).toBeInTheDocument();
     expect(basePrice).toBeInTheDocument();
     expect(totalPrice).toBeInTheDocument();
     expect(decreaseButton).toBeInTheDocument();
