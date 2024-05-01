@@ -4,7 +4,15 @@ import { createContext, ReactNode, useState } from "react";
 
 import { ProductWithTotalPrice } from "@/types/ProductWithTotalPrice";
 
-export type CartProduct = ProductWithTotalPrice & {
+export type CartProduct = Pick<
+  ProductWithTotalPrice,
+  | "id"
+  | "name"
+  | "imageUrls"
+  | "discountPercentage"
+  | "totalPrice"
+  | "basePrice"
+> & {
   quantity: number;
 };
 

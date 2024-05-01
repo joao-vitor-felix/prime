@@ -8,6 +8,7 @@ import { Button } from "@/components/ui";
 import { CONDITION } from "@/constants/CONDITION";
 import { formatPrice } from "@/helpers/formatPrice";
 import { useCartContext } from "@/hooks/useCartContext";
+import { CartProduct } from "@/providers/Cart";
 import { ProductWithTotalPrice } from "@/types/ProductWithTotalPrice";
 
 type ProductDetailsProps = {
@@ -41,7 +42,17 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
   const handleAddToCart = () => {
     if (!DoesProductHasStock) return;
 
-    addToCart({ ...product, quantity: quantity });
+    const productToAdd: CartProduct = {
+      id: product.id,
+      name: product.name,
+      imageUrls: product.imageUrls,
+      discountPercentage: product.discountPercentage,
+      basePrice: product.basePrice,
+      totalPrice: product.totalPrice,
+      quantity
+    };
+
+    addToCart(productToAdd);
     setQuantity(1);
   };
 
