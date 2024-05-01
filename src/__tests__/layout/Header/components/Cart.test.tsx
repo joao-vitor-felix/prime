@@ -193,4 +193,30 @@ describe("Cart", () => {
     await userEvent.click(decreaseButton);
     expect(quantity).toHaveTextContent("2");
   });
+
+  it("should remove product from cart when remove button is clicked", async () => {
+    const item: CartProduct = {
+      id: "1",
+      name: "Product 1",
+      basePrice: new Prisma.Decimal(100),
+      discountPercentage: 10,
+      totalPrice: 90,
+      imageUrls: ["https://example.com/image.jpg"],
+      quantity: 4
+    };
+
+    await renderComponent([item]);
+
+    const name = screen.getByRole("heading", { name: /product 1/i });
+
+    const removeButton = screen.getByRole("button", {
+      name: `Remover produto Product 1`
+    });
+
+    expect(name).toBeInTheDocument();
+    await userEvent.click(removeButton);
+    expect(name).not.toBeInTheDocument();
+    const emptyCartMessage = screen.getByText(/Não há produtos no carrinho./i);
+    expect(emptyCartMessage).toBeInTheDocument();
+  });
 });
