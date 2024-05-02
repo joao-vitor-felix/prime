@@ -206,4 +206,17 @@ describe("ProductDetails", () => {
     await userEvent.click(decreaseButton);
     expect(quantity).toHaveTextContent("1");
   });
+
+  it("should not decrease to 0 or less when decrease button is clicked", async () => {
+    const { quantity, decreaseButton } = renderComponent(productWithStock);
+
+    if (!decreaseButton) {
+      throw new Error("decreaseButton button not found");
+    }
+
+    expect(quantity).toHaveTextContent("1");
+    await userEvent.click(decreaseButton);
+    await userEvent.click(decreaseButton);
+    expect(quantity).toHaveTextContent("1");
+  });
 });
