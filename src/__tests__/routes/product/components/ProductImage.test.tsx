@@ -48,4 +48,16 @@ describe("ProductImage", () => {
     await userEvent.click(secondImage);
     expect(image).toHaveAttribute("alt", `Imagem 2 do produto ${product.name}`);
   });
+
+  it("should apply correct styles to button image when it is selected", () => {
+    const { image, buttons, product } = renderComponent();
+
+    const [firstImage, secondImage, thirdImage, fourthImage] = buttons;
+
+    expect(image).toHaveAttribute("alt", `Imagem 1 do produto ${product.name}`);
+    expect(firstImage).toHaveClass("border-2 border-primary");
+    expect(secondImage).not.toHaveClass("border-2 border-primary");
+    expect(thirdImage).not.toHaveClass("border-2 border-primary");
+    expect(fourthImage).not.toHaveClass("border-2 border-primary");
+  });
 });
