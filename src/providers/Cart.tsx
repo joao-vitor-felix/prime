@@ -48,7 +48,10 @@ export const CartContextProvider = ({
   children,
   cartValue = []
 }: CartContextProviderProps) => {
-  const [storedCart, setStoredCart] = useState(localStorage.getItem("cart"));
+  const localStorageCart =
+    typeof window !== "undefined" ? window.localStorage.getItem("cart") : null;
+
+  const [storedCart, setStoredCart] = useState(localStorageCart);
   const [cart, setCart] = useState<CartProduct[]>(cartValue);
 
   useEffect(() => {
