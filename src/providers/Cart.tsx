@@ -49,23 +49,22 @@ export const CartContextProvider = ({
 }: CartContextProviderProps) => {
   const [cart, setCart] = useState<CartProduct[]>(cartValue);
 
-  const subtotalAmount = cart.reduce(
-    (accumulator, currentValue) =>
-      accumulator + Number(currentValue.basePrice) * currentValue.quantity,
-    0
-  );
-  const discountAmount = cart.reduce(
-    (accumulator, currentValue) =>
+  const subtotalAmount = cart.reduce((accumulator, currentValue) => {
+    return accumulator + Number(currentValue.basePrice) * currentValue.quantity;
+  }, 0);
+
+  const discountAmount = cart.reduce((accumulator, currentValue) => {
+    return (
       accumulator +
       (Number(currentValue.basePrice) - currentValue.totalPrice) *
-        currentValue.quantity,
-    0
-  );
-  const totalAmount = cart.reduce(
-    (accumulator, currentValue) =>
-      accumulator + currentValue.totalPrice * currentValue.quantity,
-    0
-  );
+        currentValue.quantity
+    );
+  }, 0);
+
+  const totalAmount = cart.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue.totalPrice * currentValue.quantity;
+  }, 0);
+
   const addToCart = (product: CartProduct) => {
     const isProductAlreadyOnCart = cart.some(
       cartProduct => cartProduct.id === product.id
@@ -74,7 +73,10 @@ export const CartContextProvider = ({
     if (isProductAlreadyOnCart) {
       const newCart = cart.map(cartProduct => {
         if (cartProduct.id === product.id) {
-          cartProduct.quantity += product.quantity;
+          return {
+            ...cartProduct,
+            quantity: cartProduct.quantity + product.quantity
+          };
         }
 
         return cartProduct;
@@ -92,7 +94,7 @@ export const CartContextProvider = ({
   const incrementQuantity = (product: CartProduct) => {
     const newCart = cart.map(cartProduct => {
       if (cartProduct.id === product.id) {
-        cartProduct.quantity += 1;
+        return { ...cartProduct, quantity: cartProduct.quantity + 1 };
       }
 
       return cartProduct;
@@ -111,7 +113,7 @@ export const CartContextProvider = ({
 
     const newCart = cart.map(cartProduct => {
       if (cartProduct.id === product.id) {
-        cartProduct.quantity -= 1;
+        return { ...cartProduct, quantity: cartProduct.quantity - 1 };
       }
 
       return cartProduct;
