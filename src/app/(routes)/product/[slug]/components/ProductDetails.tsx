@@ -59,7 +59,11 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col">
-        <span className="text-xs text-light-gray">
+        <span
+          className="text-xs text-light-gray"
+          role="status"
+          aria-label="Informações do produto"
+        >
           {CONDITION[product.condition]} | {product.sold} vendidos
         </span>
         <h1 className="text-lg">{product.name}</h1>
@@ -71,15 +75,22 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
             {DoesProductHasDiscount ? (
               <>
                 <div className="flex gap-2">
-                  <h2 className="text-lg font-bold">{totalPrice}</h2>
+                  <h2 className="text-lg font-bold" aria-label="Preço total">
+                    {totalPrice}
+                  </h2>
                   <DiscountBadge discount={product.discountPercentage} />
                 </div>
-                <span className="text-sm line-through opacity-75">
+                <span
+                  className="text-sm line-through opacity-75"
+                  data-testid="product-base-price"
+                >
                   {basePrice}
                 </span>
               </>
             ) : (
-              <h2 className="text-lg font-bold">{basePrice}</h2>
+              <h2 className="text-lg font-bold" aria-label="Preço base">
+                {basePrice}
+              </h2>
             )}
           </div>
           <div className="flex items-center gap-2">
@@ -93,6 +104,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
             </Button>
             <span
               className="text-sm"
+              role="status"
               aria-label={`Quantidade do produto ${product.name}`}
             >
               {quantity}
