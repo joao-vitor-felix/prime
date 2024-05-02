@@ -200,6 +200,44 @@ describe("Cart", () => {
     expect(quantity).toHaveTextContent("2");
   });
 
+  it("should remove the product when decrease button is clicked when quantity is less than 1", async () => {
+    const item: CartProduct = {
+      id: "1",
+      name: "Product 1",
+      basePrice: new Prisma.Decimal(100),
+      discountPercentage: 10,
+      totalPrice: 90,
+      imageUrls: ["https://example.com/image.jpg"],
+      quantity: 2
+    };
+
+    await renderComponent([item]);
+
+    const cartImage = screen.getByAltText(`Imagem do produto Product 1`);
+    const name = screen.getByRole("heading", { name: /product 1/i });
+    const totalPrice = screen.getByRole("heading", { name: /preço total/i });
+    const basePrice = screen.getByTestId("cart-item-base-price");
+    const quantity = screen.getByTestId("cart-item-quantity");
+
+    const decreaseButton = screen.getByRole("button", {
+      name: `Diminuir quantidade do produto Product 1`
+    });
+
+    expect(cartImage).toBeInTheDocument();
+    expect(name).toBeInTheDocument();
+    expect(basePrice).toBeInTheDocument();
+    expect(totalPrice).toBeInTheDocument();
+    expect(quantity).toHaveTextContent("2");
+
+    await userEvent.click(decreaseButton);
+    await userEvent.click(decreaseButton);
+
+    expect(quantity).not.toBeInTheDocument();
+    expect(name).not.toBeInTheDocument();
+    expect(basePrice).not.toBeInTheDocument();
+    expect(totalPrice).not.toBeInTheDocument();
+  });
+
   it("should remove product from cart when remove button is clicked", async () => {
     const item: CartProduct = {
       id: "1",
