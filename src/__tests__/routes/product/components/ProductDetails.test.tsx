@@ -239,4 +239,14 @@ describe("ProductDetails", () => {
     await userEvent.click(regularAddToCartButton);
     expect(quantity).toHaveTextContent("1");
   });
+
+  it("should show base price and not show total price together with base price on product without discount", async () => {
+    const { basePrice, totalPrice, basePriceFromTotalPrice } = renderComponent(
+      productWithoutDiscount
+    );
+
+    expect(basePrice).toBeInTheDocument();
+    expect(totalPrice).not.toBeInTheDocument();
+    expect(basePriceFromTotalPrice).not.toBeInTheDocument();
+  });
 });
