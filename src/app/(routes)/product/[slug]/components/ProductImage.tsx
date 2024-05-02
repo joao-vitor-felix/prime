@@ -11,11 +11,13 @@ type ProductImageProps = {
 export const ProductImage = ({ name, images }: ProductImageProps) => {
   const [currentImage, setCurrentImage] = useState(images[0]);
 
+  const imageIndex = images.indexOf(currentImage) + 1;
+
   return (
     <div className="bg-accent">
       <div className="w-full">
         <Image
-          alt={`Imagem do produto ${name}`}
+          alt={`Imagem ${imageIndex} do produto ${name}`}
           src={currentImage}
           width={0}
           height={0}
@@ -35,7 +37,7 @@ export const ProductImage = ({ name, images }: ProductImageProps) => {
               }`}
             >
               <Image
-                alt={`Imagem ${images.indexOf(image) + 1} do produto ${name}`}
+                alt={`Selecionar imagem ${images.indexOf(image) + 1} do produto ${name}`}
                 src={image}
                 width={0}
                 height={0}
