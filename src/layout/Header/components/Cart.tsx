@@ -22,6 +22,10 @@ export const Cart = () => {
 
   const isCartEmpty = cart.length === 0;
 
+  const formattedSubtotalAmount = formatPrice(subtotalAmount);
+  const formattedDiscountAmount = formatPrice(discountAmount);
+  const formattedTotalAmount = formatPrice(totalAmount);
+
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -51,7 +55,7 @@ export const Cart = () => {
               <div className="flex justify-between">
                 <span>Subtotal</span>
                 <span data-testid="cart-subtotal-amount">
-                  {formatPrice(subtotalAmount)}
+                  {formattedSubtotalAmount}
                 </span>
               </div>
 
@@ -64,14 +68,14 @@ export const Cart = () => {
               <div className="flex justify-between">
                 <span>Descontos</span>
                 <span data-testid="cart-discount-amount">
-                  - {formatPrice(discountAmount)}
+                  - {formattedDiscountAmount}
                 </span>
               </div>
               <Separator />
               <div className="flex justify-between">
                 <span>Total</span>
                 <span data-testid="cart-total-amount">
-                  {formatPrice(totalAmount)}
+                  {formattedTotalAmount}
                 </span>
               </div>
             </div>
