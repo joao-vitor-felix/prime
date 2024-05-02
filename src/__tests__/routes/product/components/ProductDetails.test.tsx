@@ -219,4 +219,24 @@ describe("ProductDetails", () => {
     await userEvent.click(decreaseButton);
     expect(quantity).toHaveTextContent("1");
   });
+
+  it("should reset quantity when add to cart button is clicked", async () => {
+    const { quantity, increaseButton, regularAddToCartButton } =
+      renderComponent(productWithStock);
+
+    if (!increaseButton) {
+      throw new Error("increaseButton button not found");
+    }
+
+    if (!regularAddToCartButton) {
+      throw new Error("regularAddToCartButton button not found");
+    }
+
+    expect(quantity).toHaveTextContent("1");
+    await userEvent.click(increaseButton);
+    await userEvent.click(increaseButton);
+    expect(quantity).toHaveTextContent("3");
+    await userEvent.click(regularAddToCartButton);
+    expect(quantity).toHaveTextContent("1");
+  });
 });
