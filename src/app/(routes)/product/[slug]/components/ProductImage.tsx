@@ -35,7 +35,7 @@ export const ProductImage = ({ name, images }: ProductImageProps) => {
               }`}
             >
               <Image
-                alt={`Imagem do produto ${name}`}
+                alt={`Imagem ${images.indexOf(image) + 1} do produto ${name}`}
                 src={image}
                 width={0}
                 height={0}
