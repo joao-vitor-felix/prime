@@ -143,4 +143,33 @@ describe("ProductDetails", () => {
     expect(regularAddToCartButton).toHaveClass("bg-primary");
     expect(regularAddToCartButton).not.toBeDisabled();
   });
+
+  it("should render correctly when product hasn't stock", () => {
+    const {
+      name,
+      description,
+      quantity,
+      basePriceFromTotalPrice,
+      totalPrice,
+      decreaseButton,
+      increaseButton,
+      disabledAddToCartButton
+    } = renderComponent(productWithoutStock);
+
+    const status = screen.getByRole("status", {
+      name: /informações do produto/i
+    });
+
+    expect(name).toBeInTheDocument();
+    expect(description).toBeInTheDocument();
+    expect(status).toHaveTextContent("Usado | 50 vendidos");
+    expect(quantity).not.toBeInTheDocument();
+    expect(basePriceFromTotalPrice).not.toBeInTheDocument();
+    expect(totalPrice).not.toBeInTheDocument();
+    expect(increaseButton).not.toBeInTheDocument();
+    expect(decreaseButton).not.toBeInTheDocument();
+    expect(disabledAddToCartButton).toBeInTheDocument();
+    expect(disabledAddToCartButton).toHaveClass("bg-light-gray");
+    expect(disabledAddToCartButton).toBeDisabled();
+  });
 });
