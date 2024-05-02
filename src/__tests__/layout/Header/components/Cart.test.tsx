@@ -33,6 +33,10 @@ const renderComponent = async (cart: CartProduct[]) => {
 };
 
 describe("Cart", () => {
+  afterEach(() => {
+    localStorage.clear();
+  });
+
   it("should render Cart message when there's no products", async () => {
     const {
       cartTitle,
