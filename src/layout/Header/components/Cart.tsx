@@ -17,35 +17,10 @@ import { useCartContext } from "@/hooks/useCartContext";
 import { CartItem } from "./CartItem";
 
 export const Cart = () => {
-  const { cart } = useCartContext();
+  const { cart, subtotalAmount, totalAmount, discountAmount } =
+    useCartContext();
 
   const isCartEmpty = cart.length === 0;
-
-  const subtotalAmount = formatPrice(
-    cart.reduce(
-      (accumulator, currentValue) =>
-        accumulator + Number(currentValue.basePrice) * currentValue.quantity,
-      0
-    )
-  );
-
-  const discountAmount = formatPrice(
-    cart.reduce(
-      (accumulator, currentValue) =>
-        accumulator +
-        (Number(currentValue.basePrice) - currentValue.totalPrice) *
-          currentValue.quantity,
-      0
-    )
-  );
-
-  const totalAmount = formatPrice(
-    cart.reduce(
-      (accumulator, currentValue) =>
-        accumulator + currentValue.totalPrice * currentValue.quantity,
-      0
-    )
-  );
 
   return (
     <Sheet>
@@ -75,7 +50,9 @@ export const Cart = () => {
               <Separator />
               <div className="flex justify-between">
                 <span>Subtotal</span>
-                <span data-testid="cart-subtotal-amount">{subtotalAmount}</span>
+                <span data-testid="cart-subtotal-amount">
+                  {formatPrice(subtotalAmount)}
+                </span>
               </div>
 
               <Separator />
@@ -87,13 +64,15 @@ export const Cart = () => {
               <div className="flex justify-between">
                 <span>Descontos</span>
                 <span data-testid="cart-discount-amount">
-                  - {discountAmount}
+                  - {formatPrice(discountAmount)}
                 </span>
               </div>
               <Separator />
               <div className="flex justify-between">
                 <span>Total</span>
-                <span data-testid="cart-total-amount">{totalAmount}</span>
+                <span data-testid="cart-total-amount">
+                  {formatPrice(totalAmount)}
+                </span>
               </div>
             </div>
             <Button>Finalizar compra</Button>

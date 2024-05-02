@@ -22,6 +22,9 @@ export type CartContextType = {
   incrementQuantity: (product: CartProduct) => void;
   removeFromCart: (product: CartProduct) => void;
   clearFromCart: (product: CartProduct) => void;
+  subtotalAmount: number;
+  totalAmount: number;
+  discountAmount: number;
 };
 
 export const CartContext = createContext<CartContextType>({
@@ -29,7 +32,10 @@ export const CartContext = createContext<CartContextType>({
   addToCart: () => {},
   incrementQuantity: () => {},
   removeFromCart: () => {},
-  clearFromCart: () => {}
+  clearFromCart: () => {},
+  subtotalAmount: 0,
+  totalAmount: 0,
+  discountAmount: 0
 });
 
 type CartContextProviderProps = {
@@ -43,6 +49,23 @@ export const CartContextProvider = ({
 }: CartContextProviderProps) => {
   const [cart, setCart] = useState<CartProduct[]>(cartValue);
 
+  const subtotalAmount = cart.reduce(
+    (accumulator, currentValue) =>
+      accumulator + Number(currentValue.basePrice) * currentValue.quantity,
+    0
+  );
+  const discountAmount = cart.reduce(
+    (accumulator, currentValue) =>
+      accumulator +
+      (Number(currentValue.basePrice) - currentValue.totalPrice) *
+        currentValue.quantity,
+    0
+  );
+  const totalAmount = cart.reduce(
+    (accumulator, currentValue) =>
+      accumulator + currentValue.totalPrice * currentValue.quantity,
+    0
+  );
   const addToCart = (product: CartProduct) => {
     const isProductAlreadyOnCart = cart.some(
       cartProduct => cartProduct.id === product.id
@@ -112,7 +135,10 @@ export const CartContextProvider = ({
         addToCart,
         incrementQuantity,
         removeFromCart,
-        clearFromCart
+        clearFromCart,
+        subtotalAmount,
+        discountAmount,
+        totalAmount
       }}
     >
       {children}
