@@ -1,5 +1,6 @@
 import { Trash } from "lucide-react";
 import Image from "next/image";
+import { memo } from "react";
 
 import { Button } from "@/components/ui";
 import { formatPrice } from "@/helpers/formatPrice";
@@ -12,7 +13,7 @@ type CartItemProps = {
   product: CartProduct;
 };
 
-export const CartItem = ({ product }: CartItemProps) => {
+export const CartItem = memo(({ product }: CartItemProps) => {
   const { clearFromCart } = useCartContext();
 
   const DoesProductHasDiscount = product.discountPercentage > 0;
@@ -67,4 +68,6 @@ export const CartItem = ({ product }: CartItemProps) => {
       </Button>
     </div>
   );
-};
+});
+
+CartItem.displayName = "CartItem";
