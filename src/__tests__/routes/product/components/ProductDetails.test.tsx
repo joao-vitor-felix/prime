@@ -172,4 +172,17 @@ describe("ProductDetails", () => {
     expect(disabledAddToCartButton).toHaveClass("bg-light-gray");
     expect(disabledAddToCartButton).toBeDisabled();
   });
+
+  it("should increase quantity when increase button is clicked", async () => {
+    const { quantity, increaseButton } = renderComponent(productWithStock);
+
+    if (!increaseButton) {
+      throw new Error("increaseButton button not found");
+    }
+
+    expect(quantity).toHaveTextContent("1");
+    await userEvent.click(increaseButton);
+    await userEvent.click(increaseButton);
+    expect(quantity).toHaveTextContent("3");
+  });
 });
