@@ -1,6 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useEffect, useState } from "react";
 
 import { ProductWithTotalPrice } from "@/types/ProductWithTotalPrice";
 
@@ -47,7 +48,18 @@ export const CartContextProvider = ({
   children,
   cartValue = []
 }: CartContextProviderProps) => {
+  const [storedCart, setStoredCart] = useState(localStorage.getItem("cart"));
   const [cart, setCart] = useState<CartProduct[]>(cartValue);
+
+  useEffect(() => {
+    if (!storedCart) {
+      return;
+    }
+
+    const parsedCart = JSON.parse(storedCart) as CartProduct[];
+
+    setCart(parsedCart);
+  }, []);
 
   const subtotalAmount = cart.reduce((accumulator, currentValue) => {
     return accumulator + Number(currentValue.basePrice) * currentValue.quantity;
@@ -64,6 +76,11 @@ export const CartContextProvider = ({
   const totalAmount = cart.reduce((accumulator, currentValue) => {
     return accumulator + currentValue.totalPrice * currentValue.quantity;
   }, 0);
+
+  const setLocalStorage = (cart: CartProduct[]) => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+    setStoredCart(JSON.stringify(cart));
+  };
 
   const addToCart = (product: CartProduct) => {
     const isProductAlreadyOnCart = cart.some(
@@ -83,12 +100,15 @@ export const CartContextProvider = ({
       });
 
       setCart(newCart);
+      setLocalStorage(newCart);
       return;
     }
 
     const newProduct = { ...product, quantity: product.quantity };
+    const newCart = [...cart, newProduct];
 
-    setCart([...cart, newProduct]);
+    setCart(newCart);
+    setLocalStorage(newCart);
   };
 
   const incrementQuantity = (product: CartProduct) => {
@@ -101,6 +121,7 @@ export const CartContextProvider = ({
     });
 
     setCart(newCart);
+    setLocalStorage(newCart);
   };
 
   const removeFromCart = (product: CartProduct) => {
@@ -120,6 +141,7 @@ export const CartContextProvider = ({
     });
 
     setCart(newCart);
+    setLocalStorage(newCart);
   };
 
   const clearFromCart = (product: CartProduct) => {
@@ -128,6 +150,7 @@ export const CartContextProvider = ({
     );
 
     setCart(newProducts);
+    setLocalStorage(newProducts);
   };
 
   return (
