@@ -249,4 +249,13 @@ describe("ProductDetails", () => {
     expect(totalPrice).not.toBeInTheDocument();
     expect(basePriceFromTotalPrice).not.toBeInTheDocument();
   });
+
+  it("should show total price together with base price while not show base price alone on product with discount", async () => {
+    const { basePrice, totalPrice, basePriceFromTotalPrice } =
+      renderComponent(productWithStock);
+
+    expect(totalPrice).toBeInTheDocument();
+    expect(basePriceFromTotalPrice).toBeInTheDocument();
+    expect(basePrice).not.toBeInTheDocument();
+  });
 });
