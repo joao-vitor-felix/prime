@@ -16,9 +16,9 @@ type ProductDetailsProps = {
 };
 
 export const ProductDetails = ({ product }: ProductDetailsProps) => {
-  const DoesProductHasStock = product.stock > 0;
-  const DoesProductHasDiscount = product.discountPercentage > 0;
-  const buttonText = DoesProductHasStock
+  const doesProductHasStock = product.stock > 0;
+  const doesProductHasDiscount = product.discountPercentage > 0;
+  const buttonText = doesProductHasStock
     ? "Adicionar ao carrinho"
     : "Produto indisponível";
 
@@ -40,7 +40,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
   };
 
   const handleAddToCart = () => {
-    if (!DoesProductHasStock) return;
+    if (!doesProductHasStock) return;
 
     const productToAdd: CartProduct = {
       id: product.id,
@@ -69,10 +69,10 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
         <h1 className="text-lg">{product.name}</h1>
         {/* TODO: RATING */}
       </div>
-      {DoesProductHasStock && (
+      {doesProductHasStock && (
         <>
           <div className="flex flex-col">
-            {DoesProductHasDiscount ? (
+            {doesProductHasDiscount ? (
               <>
                 <div className="flex gap-2">
                   <h2 className="text-lg font-bold" aria-label="Preço total">
@@ -129,9 +129,9 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
       </div>
 
       <Button
-        className={`font-bold ${DoesProductHasStock ? "bg-primary" : "bg-light-gray"}`}
+        className={`font-bold ${doesProductHasStock ? "bg-primary" : "bg-light-gray"}`}
         onClick={handleAddToCart}
-        disabled={!DoesProductHasStock}
+        disabled={!doesProductHasStock}
       >
         {buttonText}
       </Button>
