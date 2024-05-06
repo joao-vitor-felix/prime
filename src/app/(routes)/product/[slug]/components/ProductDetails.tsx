@@ -34,9 +34,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
   };
 
   const handleDecreaseQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(prev => prev - 1);
-    }
+    setQuantity(prev => (prev > 1 ? prev - 1 : prev));
   };
 
   const handleAddToCart = () => {
