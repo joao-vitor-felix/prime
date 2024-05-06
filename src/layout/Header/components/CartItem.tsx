@@ -16,7 +16,7 @@ type CartItemProps = {
 export const CartItem = memo(({ product }: CartItemProps) => {
   const { clearFromCart } = useCartContext();
 
-  const DoesProductHasDiscount = product.discountPercentage > 0;
+  const doesProductHasDiscount = product.discountPercentage > 0;
   const totalPrice = formatPrice(product.totalPrice);
   const basePrice = formatPrice(Number(product.basePrice));
 
@@ -35,26 +35,24 @@ export const CartItem = memo(({ product }: CartItemProps) => {
 
       <div className="flex w-full flex-col">
         <h3 className="truncate text-xs">{product.name}</h3>
-        <div className="flex flex-col">
-          {DoesProductHasDiscount ? (
-            <div className="flex items-center gap-1">
-              <h2 className="text-sm font-bold" aria-label="Preço total">
-                {totalPrice}
-              </h2>
-              <span
-                className="text-xs line-through opacity-75"
-                aria-label="Preço base"
-                data-testid="cart-item-base-price"
-              >
-                {basePrice}
-              </span>
-            </div>
-          ) : (
-            <h2 className="text-sm font-bold" aria-label="Preço base">
-              {basePrice}
+        {doesProductHasDiscount ? (
+          <div className="flex items-center gap-1">
+            <h2 className="text-sm font-bold" aria-label="Preço total">
+              {totalPrice}
             </h2>
-          )}
-        </div>
+            <span
+              className="text-xs line-through opacity-75"
+              aria-label="Preço base"
+              data-testid="cart-item-base-price"
+            >
+              {basePrice}
+            </span>
+          </div>
+        ) : (
+          <h2 className="text-sm font-bold" aria-label="Preço base">
+            {basePrice}
+          </h2>
+        )}
         <CartQuantity product={product} />
       </div>
 
