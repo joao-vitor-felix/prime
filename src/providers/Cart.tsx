@@ -68,17 +68,11 @@ export const CartContextProvider = ({
     return accumulator + Number(currentValue.basePrice) * currentValue.quantity;
   }, 0);
 
-  const discountAmount = cart.reduce((accumulator, currentValue) => {
-    return (
-      accumulator +
-      (Number(currentValue.basePrice) - currentValue.totalPrice) *
-        currentValue.quantity
-    );
-  }, 0);
-
   const totalAmount = cart.reduce((accumulator, currentValue) => {
     return accumulator + currentValue.totalPrice * currentValue.quantity;
   }, 0);
+
+  const discountAmount = subtotalAmount - totalAmount;
 
   const setLocalStorage = (cart: CartProduct[]) => {
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -148,12 +142,10 @@ export const CartContextProvider = ({
   };
 
   const clearFromCart = (product: CartProduct) => {
-    const newProducts = cart.filter(
-      cartProduct => cartProduct.id !== product.id
-    );
+    const newCart = cart.filter(cartProduct => cartProduct.id !== product.id);
 
-    setCart(newProducts);
-    setLocalStorage(newProducts);
+    setCart(newCart);
+    setLocalStorage(newCart);
   };
 
   return (
