@@ -11,14 +11,14 @@ type CartQuantity = {
 };
 
 export const CartQuantity = ({ product }: CartQuantity) => {
-  const { incrementQuantity, removeFromCart } = useCartContext();
+  const { incrementQuantity, decrementQuantity } = useCartContext();
 
   return (
     <div className="flex items-center gap-2">
       <Button
         variant="link"
         className="size-8 p-0"
-        onClick={() => removeFromCart(product)}
+        onClick={() => decrementQuantity(product)}
         aria-label={`Diminuir quantidade do produto ${product.name}`}
       >
         <ChevronLeft size={20} />
