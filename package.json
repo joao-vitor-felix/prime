@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
+    "build": "next build",
     "lint": "eslint src --max-warnings=0",
     "lint:check": "prettier --check src",
     "lint:fix": "prettier --write src && eslint src --fix",
@@ -15,8 +15,7 @@
     "test:ui": "vitest --ui --passWithNoTests",
     "cypress": "cypress open",
     "generate": "plop --plopfile ./generators/plopfile.js",
-    "prepare": "husky",
-    "postinstall": "prisma generate"
+    "postinstall": "husky && prisma generate"
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
