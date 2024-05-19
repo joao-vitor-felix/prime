@@ -23,6 +23,7 @@ export type CartContextType = {
   incrementQuantity: (product: CartProduct) => void;
   decrementQuantity: (product: CartProduct) => void;
   clearFromCart: (product: CartProduct) => void;
+  clearCart: () => void;
   subtotalAmount: number;
   totalAmount: number;
   discountAmount: number;
@@ -34,6 +35,7 @@ export const CartContext = createContext<CartContextType>({
   incrementQuantity: () => {},
   decrementQuantity: () => {},
   clearFromCart: () => {},
+  clearCart: () => {},
   subtotalAmount: 0,
   totalAmount: 0,
   discountAmount: 0
@@ -148,6 +150,11 @@ export const CartContextProvider = ({
     setLocalStorage(newCart);
   };
 
+  const clearCart = () => {
+    setCart([]);
+    setLocalStorage([]);
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -156,6 +163,7 @@ export const CartContextProvider = ({
         incrementQuantity,
         decrementQuantity,
         clearFromCart,
+        clearCart,
         subtotalAmount,
         discountAmount,
         totalAmount
