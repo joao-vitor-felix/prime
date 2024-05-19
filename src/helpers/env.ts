@@ -3,9 +3,11 @@ type Env = {
   DIRECT_URL: string;
   GOOGLE_CLIENT_ID: string;
   GOOGLE_CLIENT_SECRET: string;
-  STRIPE_SECRET_KEY: string;
   NEXT_PUBLIC_STRIPE_KEY: string;
+  STRIPE_SECRET_KEY: string;
   STRIPE_WEBHOOK_SECRET_KEY: string;
+  NEXTAUTH_SECRET: string;
+  NEXTAUTH_URL: string;
   HOST_URL: string;
 };
 
@@ -17,5 +19,7 @@ export const env: Env = {
   NEXT_PUBLIC_STRIPE_KEY: process.env.NEXT_PUBLIC_STRIPE_KEY,
   STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
   STRIPE_WEBHOOK_SECRET_KEY: process.env.STRIPE_WEBHOOK_SECRET_KEY,
+  NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
+  NEXTAUTH_URL: process.env.NEXTAUTH_URL,
   HOST_URL: process.env.HOST_URL
 };
