@@ -5,12 +5,22 @@ import { Stripe } from "stripe";
 import { env } from "@/helpers/env";
 import { CartProduct } from "@/providers/Cart";
 
-export const createCheckout = async (products: CartProduct[]) => {
+export const createCheckout = async (
+  products: CartProduct[],
+  userId: string
+) => {
   const stripe = new Stripe(env.STRIPE_SECRET_KEY, {
     apiVersion: "2024-04-10"
   });
 
-  const session = await stripe.checkout.sessions.create({
+  const productsId: Record<string, string> = Object.assign(
+    {},
+    ...products.map(product => ({
+      productId: product.id
+    }))
+  );
+
+  const stripeCheckout = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
     line_items: products.map(product => ({
       price_data: {
@@ -24,11 +34,14 @@ export const createCheckout = async (products: CartProduct[]) => {
       quantity: product.quantity
     })),
     mode: "payment",
-
+    metadata: {
+      userId,
+      ...productsId
+    },
     // TODO: redirect to /orders
     success_url: `${env.HOST_URL}/category`,
     cancel_url: `${env.HOST_URL}`
   });
 
-  return session.url;
+  return stripeCheckout.url;
 };
