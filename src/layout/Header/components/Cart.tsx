@@ -1,7 +1,11 @@
 "use client";
 
 import { ShoppingCart } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useTransition } from "react";
 
+import { createCheckout } from "@/actions/stripe/createCheckout";
+import { Spinner } from "@/components/Spinner";
 import { TitleBadged } from "@/components/typography/TitleBadged";
 import {
   Button,
@@ -11,13 +15,14 @@ import {
   SheetHeader,
   SheetTrigger
 } from "@/components/ui";
+import { useToast } from "@/components/ui";
 import { formatPrice } from "@/helpers/formatPrice";
 import { useCartContext } from "@/hooks/useCartContext";
 
 import { CartItem } from "./CartItem";
 
 export const Cart = () => {
-  const { cart, subtotalAmount, totalAmount, discountAmount } =
+  const { cart, subtotalAmount, totalAmount, discountAmount, clearCart } =
     useCartContext();
 
   const isCartEmpty = cart.length === 0;
@@ -25,6 +30,28 @@ export const Cart = () => {
   const formattedSubtotalAmount = formatPrice(subtotalAmount);
   const formattedDiscountAmount = formatPrice(discountAmount);
   const formattedTotalAmount = formatPrice(totalAmount);
+  const { toast } = useToast();
+  const [isPending, startTransition] = useTransition();
+
+  const router = useRouter();
+
+  const handleCheckout = () => {
+    startTransition(async () => {
+      const sessionUrl = await createCheckout(cart);
+
+      if (!sessionUrl) {
+        toast({
+          title: "Erro ao finalizar compra",
+          description: "Tente novamente mais tarde.",
+          variant: "destructive"
+        });
+        return;
+      }
+
+      clearCart();
+      router.push(sessionUrl);
+    });
+  };
 
   return (
     <Sheet>
@@ -79,7 +106,10 @@ export const Cart = () => {
                 </span>
               </div>
             </div>
-            <Button>Finalizar compra</Button>
+            <Button onClick={handleCheckout} disabled={isPending}>
+              {isPending && <Spinner />}
+              Finalizar compra
+            </Button>
           </>
         )}
       </SheetContent>
