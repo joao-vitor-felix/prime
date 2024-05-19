@@ -8,10 +8,33 @@ import { prisma } from "@/lib/prisma";
 
 export const authOptions: AuthOptions = {
   adapter: PrismaAdapter(prisma) as Adapter,
+  session: {
+    strategy: "jwt"
+  },
   providers: [
     GoogleProvider({
       clientId: env.GOOGLE_CLIENT_ID,
       clientSecret: env.GOOGLE_CLIENT_SECRET
     })
-  ]
+  ],
+  callbacks: {
+    async jwt({ token }) {
+      if (token.email) {
+        const foundUser = await prisma.user.findUnique({
+          where: { email: token.email },
+          select: { id: true }
+        });
+
+        if (foundUser) {
+          token.id = foundUser.id;
+        }
+      }
+
+      return token;
+    },
+    async session({ session, token }) {
+      session.user.id = token.id;
+      return session;
+    }
+  }
 };

@@ -2,6 +2,7 @@
 
 import { ShoppingCart } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 import { useTransition } from "react";
 
 import { createCheckout } from "@/actions/stripe/createCheckout";
@@ -33,11 +34,23 @@ export const Cart = () => {
   const { toast } = useToast();
   const [isPending, startTransition] = useTransition();
 
+  const session = useSession();
   const router = useRouter();
 
   const handleCheckout = () => {
+    const userId = session.data?.user.id;
+
+    if (!userId) {
+      toast({
+        title: "Erro ao finalizar compra",
+        description: "Entre para realizar uma compra.",
+        variant: "destructive"
+      });
+      return;
+    }
+
     startTransition(async () => {
-      const sessionUrl = await createCheckout(cart);
+      const sessionUrl = await createCheckout(cart, userId);
 
       if (!sessionUrl) {
         toast({
