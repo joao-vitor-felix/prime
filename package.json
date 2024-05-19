@@ -14,7 +14,8 @@
     "test:ci": "vitest run --coverage --passWithNoTests",
     "test:ui": "vitest --ui --passWithNoTests",
     "cypress": "cypress open",
-    "postinstall": "husky && prisma generate"
+    "postinstall": "husky && prisma generate",
+    "stripe:listen": "stripe listen --forward-to localhost:3000/api/stripe"
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
@@ -25,11 +26,13 @@
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-toast": "^1.1.5",
     "lucide-react": "^0.323.0",
     "next": "14.1.0",
     "next-auth": "^4.24.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "stripe": "^15.7.0"
   },
   "devDependencies": {
     "@auth/prisma-adapter": "^1.6.0",

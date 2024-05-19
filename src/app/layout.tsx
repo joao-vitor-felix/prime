@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 
+import { Toaster } from "@/components/ui/Toaster";
 import { Footer } from "@/layout/Footer/Footer";
 import { Header } from "@/layout/Header/Header";
 import { cn } from "@/lib/utils";
@@ -30,6 +31,7 @@ export default function RootLayout({
             <div className="grow">{children}</div>
           </CartContextProvider>
           <Footer />
+          <Toaster />
         </AuthProvider>
       </body>
     </html>
