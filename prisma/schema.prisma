@@ -97,15 +97,21 @@ model Review {
 }
 
 model Coupon {
-  id                 String        @id @default(uuid())
-  code               String        @unique
-  createdAt          DateTime      @default(now())
-  expDate            DateTime
-  isUnique           Boolean
-  discountPercentage Int
-  categoryId         String
-  category           Category      @relation(fields: [categoryId], references: [id])
-  couponUsages       CouponUsage[]
+  id           String        @id @default(uuid())
+  code         String        @unique
+  createdAt    DateTime      @default(now())
+  expDate      DateTime
+  isUnique     Boolean
+  type         CouponType
+  discount     Int
+  categoryId   String
+  category     Category      @relation(fields: [categoryId], references: [id])
+  couponUsages CouponUsage[]
+}
+
+enum CouponType {
+  PERCENTAGE
+  FIXED
 }
 
 model CouponUsage {
