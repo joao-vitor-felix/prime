@@ -24,8 +24,6 @@ export async function POST(req: NextRequest) {
     );
 
     if (event.type === "checkout.session.completed") {
-      const session = event.data.object.line_items;
-
       //TODO: Criar pedido
     }
 
