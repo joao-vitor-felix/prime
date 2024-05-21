@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 import { getCategoryWithProducts } from "@/actions/category/getCategoryWithProducts";
+import { getDealProducts } from "@/actions/product/getDealProducts";
 import { ProductList } from "@/components/ProductList";
 import { Title } from "@/components/typography/Title";
 import { Container } from "@/components/ui";
-import { prisma } from "@/lib/prisma";
 
 import { CategoriesButtonList } from "./components/CategoriesButtonList";
 import { PromoBanner } from "./components/PromoBanner";
@@ -12,13 +12,7 @@ import { PromoBanner } from "./components/PromoBanner";
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const deals = await prisma.product.findMany({
-    where: {
-      discountPercentage: {
-        gt: 0
-      }
-    }
-  });
+  const deals = await getDealProducts();
 
   const keyboards = await getCategoryWithProducts("keyboards");
   const mouses = await getCategoryWithProducts("mouses");
