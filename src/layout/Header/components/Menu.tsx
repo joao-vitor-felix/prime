@@ -66,7 +66,7 @@ export const Menu = () => {
       />
 
       <MenuItem
-        href="#"
+        href="/deals"
         icon={<Percent size={18} className="text-primary" />}
         linkChildren="Ofertas"
         aria-label="Ofertas disponíveis"
