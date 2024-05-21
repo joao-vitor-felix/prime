@@ -7,7 +7,6 @@ type Env = {
   STRIPE_SECRET_KEY: string;
   STRIPE_WEBHOOK_SECRET_KEY: string;
   NEXTAUTH_SECRET: string;
-  NEXTAUTH_URL: string;
   HOST_URL: string;
 };
 
@@ -20,6 +19,5 @@ export const env: Env = {
   STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
   STRIPE_WEBHOOK_SECRET_KEY: process.env.STRIPE_WEBHOOK_SECRET_KEY,
   NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
-  NEXTAUTH_URL: process.env.NEXTAUTH_URL,
   HOST_URL: process.env.HOST_URL
 };
