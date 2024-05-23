@@ -2,6 +2,7 @@ import { NextRequest } from "next/server";
 import Stripe from "stripe";
 
 import { env } from "@/helpers/env";
+import { prisma } from "@/lib/prisma";
 
 export async function POST(req: NextRequest) {
   try {
@@ -24,7 +25,16 @@ export async function POST(req: NextRequest) {
     );
 
     if (event.type === "checkout.session.completed") {
-      //TODO: Criar pedido
+      const orderId = event.data.object.metadata?.orderId;
+
+      await prisma.order.update({
+        where: {
+          id: orderId
+        },
+        data: {
+          status: "PAYMENT_CONFIRMED"
+        }
+      });
     }
 
     return new Response("Success", { status: 200 });
@@ -32,5 +42,7 @@ export async function POST(req: NextRequest) {
     if (error instanceof Stripe.errors.StripeSignatureVerificationError) {
       return new Response("Invalid signature", { status: 400 });
     }
+
+    console.error(error);
   }
 }
