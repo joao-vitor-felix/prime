@@ -7,18 +7,11 @@ import { CartProduct } from "@/providers/Cart";
 
 export const createCheckout = async (
   products: CartProduct[],
-  userId: string
+  orderId: string
 ) => {
   const stripe = new Stripe(env.STRIPE_SECRET_KEY, {
     apiVersion: "2024-04-10"
   });
-
-  const productsId: Record<string, string> = Object.assign(
-    {},
-    ...products.map(product => ({
-      productId: product.id
-    }))
-  );
 
   const stripeCheckout = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
@@ -35,8 +28,7 @@ export const createCheckout = async (
     })),
     mode: "payment",
     metadata: {
-      userId,
-      ...productsId
+      orderId
     },
     // TODO: redirect to /orders
     success_url: `${env.HOST_URL}/category`,

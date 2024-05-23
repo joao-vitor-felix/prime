@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { useTransition } from "react";
 
+import { createOrder } from "@/actions/order/createOrder";
 import { createCheckout } from "@/actions/stripe/createCheckout";
 import { Spinner } from "@/components/Spinner";
 import { TitleBadged } from "@/components/typography/TitleBadged";
@@ -50,7 +51,8 @@ export const Cart = () => {
     }
 
     startTransition(async () => {
-      const sessionUrl = await createCheckout(cart, userId);
+      const order = await createOrder(cart, userId);
+      const sessionUrl = await createCheckout(cart, order.id);
 
       if (!sessionUrl) {
         toast({
@@ -61,7 +63,9 @@ export const Cart = () => {
         return;
       }
 
-      clearCart();
+      setTimeout(() => {
+        clearCart();
+      }, 1000);
       router.push(sessionUrl);
     });
   };
