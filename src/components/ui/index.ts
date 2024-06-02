@@ -1,3 +1,4 @@
+export * from "@/components/ui/Accordion";
 export * from "@/components/ui/Avatar";
 export * from "@/components/ui/Badge";
 export * from "@/components/ui/Button";
