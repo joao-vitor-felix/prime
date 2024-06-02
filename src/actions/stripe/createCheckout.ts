@@ -31,7 +31,7 @@ export const createCheckout = async (
       orderId
     },
     // TODO: redirect to /orders
-    success_url: `${env.HOST_URL}/category`,
+    success_url: `${env.HOST_URL}/orders`,
     cancel_url: `${env.HOST_URL}`
   });
 

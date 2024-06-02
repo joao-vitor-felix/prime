@@ -6,8 +6,8 @@ import {
   Library,
   LogIn,
   LogOut,
-  PackageSearch,
-  Percent
+  Percent,
+  ShoppingBasket
 } from "lucide-react";
 import { signIn, signOut, useSession } from "next-auth/react";
 
@@ -82,8 +82,8 @@ export const Menu = () => {
       {isUserAuthenticated && (
         <>
           <MenuItem
-            href="#"
-            icon={<PackageSearch size={18} className="text-primary" />}
+            href="/orders"
+            icon={<ShoppingBasket size={18} className="text-primary" />}
             linkChildren="Pedidos"
             aria-label="Meus pedidos"
           />
