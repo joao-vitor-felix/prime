@@ -33,8 +33,8 @@ export const CartItem = memo(({ product }: CartItemProps) => {
         />
       </div>
 
-      <div className="flex w-full flex-col">
-        <h3 className="truncate text-xs">{product.name}</h3>
+      <div className="flex w-1/2 flex-col">
+        <h3 className="truncate break-words text-xs">{product.name}</h3>
         {doesProductHasDiscount ? (
           <div className="flex items-center gap-1">
             <h2 className="text-sm font-bold" aria-label="Preço total">
