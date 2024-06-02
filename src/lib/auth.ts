@@ -1,5 +1,10 @@
 import { PrismaAdapter } from "@auth/prisma-adapter";
-import type { AuthOptions } from "next-auth";
+import {
+  GetServerSidePropsContext,
+  NextApiRequest,
+  NextApiResponse
+} from "next";
+import { type AuthOptions, getServerSession } from "next-auth";
 import type { Adapter } from "next-auth/adapters";
 import GoogleProvider from "next-auth/providers/google";
 
@@ -38,3 +43,12 @@ export const authOptions: AuthOptions = {
     }
   }
 };
+
+export async function auth(
+  ...args:
+    | [GetServerSidePropsContext["req"], GetServerSidePropsContext["res"]]
+    | [NextApiRequest, NextApiResponse]
+    | []
+) {
+  return await getServerSession(...args, authOptions);
+}
