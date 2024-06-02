@@ -27,13 +27,45 @@ export async function POST(req: NextRequest) {
     if (event.type === "checkout.session.completed") {
       const orderId = event.data.object.metadata?.orderId;
 
-      await prisma.order.update({
-        where: {
-          id: orderId
-        },
-        data: {
-          status: "PAYMENT_CONFIRMED"
-        }
+      prisma.$transaction(async tx => {
+        const order = await tx.order.update({
+          where: {
+            id: orderId
+          },
+          data: {
+            status: "PAYMENT_CONFIRMED"
+          },
+          include: {
+            orderProducts: {
+              include: {
+                product: true
+              }
+            }
+          }
+        });
+
+        await tx.product.updateMany({
+          where: {
+            id: {
+              in: order.orderProducts.map(
+                orderProduct => orderProduct.productId
+              )
+            }
+          },
+          data: {
+            stock: {
+              decrement: order.orderProducts.reduce(
+                (accumulator, currentValue) => {
+                  return accumulator + currentValue.quantity;
+                },
+                0
+              )
+            },
+            sold: {
+              increment: 1
+            }
+          }
+        });
       });
     }
 
