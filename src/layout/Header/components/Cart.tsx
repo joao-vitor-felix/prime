@@ -11,7 +11,6 @@ import { Spinner } from "@/components/Spinner";
 import { TitleBadged } from "@/components/typography/TitleBadged";
 import {
   Button,
-  Separator,
   Sheet,
   SheetContent,
   SheetHeader,
@@ -22,6 +21,7 @@ import { formatPrice } from "@/helpers/formatPrice";
 import { useCartContext } from "@/hooks/useCartContext";
 
 import { CartItem } from "./CartItem";
+import { CartPricing } from "./CartPricing";
 
 export const Cart = () => {
   const { cart, subtotalAmount, totalAmount, discountAmount, clearCart } =
@@ -63,9 +63,7 @@ export const Cart = () => {
         return;
       }
 
-      setTimeout(() => {
-        clearCart();
-      }, 1000);
+      clearCart();
       router.push(sessionUrl);
     });
   };
@@ -94,35 +92,12 @@ export const Cart = () => {
 
         {!isCartEmpty && (
           <>
-            <div className="flex flex-col gap-3 text-xs">
-              <Separator />
-              <div className="flex justify-between">
-                <span>Subtotal</span>
-                <span data-testid="cart-subtotal-amount">
-                  {formattedSubtotalAmount}
-                </span>
-              </div>
+            <CartPricing
+              subtotalAmount={formattedSubtotalAmount}
+              discountAmount={formattedDiscountAmount}
+              totalAmount={formattedTotalAmount}
+            />
 
-              <Separator />
-              <div className="flex justify-between">
-                <span>Entrega</span>
-                <span>Grátis</span>
-              </div>
-              <Separator />
-              <div className="flex justify-between">
-                <span>Descontos</span>
-                <span data-testid="cart-discount-amount">
-                  - {formattedDiscountAmount}
-                </span>
-              </div>
-              <Separator />
-              <div className="flex justify-between">
-                <span>Total</span>
-                <span data-testid="cart-total-amount">
-                  {formattedTotalAmount}
-                </span>
-              </div>
-            </div>
             <Button onClick={handleCheckout} disabled={isPending}>
               {isPending && <Spinner />}
               Finalizar compra
