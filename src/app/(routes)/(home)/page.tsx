@@ -13,64 +13,100 @@ export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const deals = await getDealProducts();
-
   const keyboards = await getCategoryWithProducts("keyboards");
   const mouses = await getCategoryWithProducts("mouses");
 
   return (
-    <Container>
-      <Link href="#" aria-label="Produtos com até 55% de desconto">
+    <>
+      <Link href="/deals">
         <PromoBanner
-          src="banner-discount-mobile.svg"
+          src="/banner-deals-desktop.png"
           width={0}
           height={0}
-          className="w-full"
+          sizes="100wv"
+          className="hidden w-full lg:block"
           alt="Banner exibindo produtos com até 55% de desconto"
         />
       </Link>
+      <Container className="lg:pt-0">
+        <Link href="#" aria-label="Produtos com até 55% de desconto">
+          <PromoBanner
+            src="banner-discount-mobile.svg"
+            width={0}
+            height={0}
+            className="w-full lg:hidden "
+            alt="Banner exibindo produtos com até 55% de desconto"
+          />
+        </Link>
 
-      <CategoriesButtonList />
+        <CategoriesButtonList />
 
-      <section className="flex flex-col gap-5" aria-label="Ofertas">
-        {/* TODO: levar para página de ofertas */}
-        <Title>OFERTAS</Title>
-        <ProductList products={deals} />
-      </section>
+        <section className="flex flex-col gap-5" aria-label="Ofertas">
+          <Link href="/deals" className="w-fit">
+            <Title>OFERTAS</Title>
+          </Link>
+          <ProductList products={deals} />
+        </section>
 
-      <Link href="/category/mouses" aria-label="Mouses com até 55% de desconto">
-        <PromoBanner
-          src="banner-mouses-mobile.svg"
-          width={0}
-          height={0}
-          className="w-full"
-          alt="Banner exibindo mouses com até 55% de desconto"
-        />
-      </Link>
+        <div className="flex gap-9">
+          <Link
+            href="/category/mouses"
+            aria-label="Mouses com até 55% de desconto"
+            className="flex-1"
+          >
+            <PromoBanner
+              src="banner-mouses-mobile.svg"
+              width={0}
+              height={0}
+              className="w-full"
+              alt="Banner exibindo mouses com até 55% de desconto"
+            />
+          </Link>
 
-      <section className="flex flex-col gap-5" aria-label="Teclados">
-        {/* TODO: levar para página de teclados */}
-        <Title>TECLADOS</Title>
-        <ProductList products={keyboards.products} />
-      </section>
+          <Link
+            href="/category/headphones"
+            aria-label="Fones com até 55% de desconto"
+            className="hidden flex-1 lg:flex"
+          >
+            <PromoBanner
+              src="banner-fones-mobile.svg"
+              width={0}
+              height={0}
+              className="w-full"
+              alt="Banner exibindo fones com até 55% de desconto"
+            />
+          </Link>
+        </div>
 
-      <Link
-        href="/category/headphones"
-        aria-label="Fones com até 55% de desconto"
-      >
-        <PromoBanner
-          src="banner-fones-mobile.svg"
-          width={0}
-          height={0}
-          className="w-full"
-          alt="Banner exibindo fones com até 55% de desconto"
-        />
-      </Link>
+        <section className="flex flex-col gap-5" aria-label="Teclados">
+          <Link href="/category/keyboards" className="w-fit">
+            <Title>TECLADOS</Title>
+          </Link>
 
-      <section className="mb-5 flex flex-col gap-5" aria-label="Mouses">
-        {/* TODO: levar para página de mouses */}
-        <Title>MOUSES</Title>
-        <ProductList products={mouses.products} />
-      </section>
-    </Container>
+          <ProductList products={keyboards.products} />
+        </section>
+
+        <Link
+          href="/category/headphones"
+          aria-label="Fones com até 55% de desconto"
+          className="lg:hidden"
+        >
+          <PromoBanner
+            src="banner-fones-mobile.svg"
+            width={0}
+            height={0}
+            className="w-full"
+            alt="Banner exibindo fones com até 55% de desconto"
+          />
+        </Link>
+
+        <section className="mb-5 flex flex-col gap-5" aria-label="Mouses">
+          <Link href="/category/mouses" className="w-fit">
+            <Title>MOUSES</Title>
+          </Link>
+          <ProductList products={mouses.products} />
+        </section>
+      </Container>
+    </>
   );
 }

@@ -18,10 +18,10 @@ export const ProductItem = ({ product }: ProductItemProps) => {
 
   return (
     <Link
-      className="relative flex min-h-60 min-w-40 max-w-40 flex-col gap-4"
+      className="relative flex min-h-56 min-w-40 max-w-40 flex-col gap-4 lg:min-h-64 lg:min-w-44 lg:max-w-44"
       href={`/product/${product.slug}`}
     >
-      <div className="flex h-44 items-center justify-center rounded-lg bg-accent">
+      <div className="flex h-44 items-center justify-center rounded-lg bg-accent lg:min-h-[190px]">
         <Image
           alt={`Imagem do produto ${product.name}`}
           src={product.imageUrls[0]}
@@ -39,8 +39,8 @@ export const ProductItem = ({ product }: ProductItemProps) => {
         />
       )}
 
-      <div className="flex flex-col">
-        <span className="truncate text-sm">{product.name}</span>
+      <div className="flex flex-col lg:gap-2">
+        <span className="truncate text-sm lg:text-base">{product.name}</span>
         <div className="flex items-center gap-2">
           {doesProductHaveDiscount && (
             <span className="font-bold">{totalPrice}</span>
