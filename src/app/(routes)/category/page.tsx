@@ -23,7 +23,7 @@ const Category = async () => {
         Categorias
       </TitleBadged>
       <section
-        className="grid grid-cols-2 justify-items-center gap-8 md:grid-cols-4 lg:grid-cols-category-item-grid"
+        className="grid grid-cols-2 justify-items-center gap-8 md:grid-cols-4 lg:grid-cols-3"
         aria-label="Categorias"
       >
         {categories.map(category => (
