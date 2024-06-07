@@ -29,12 +29,12 @@ export default async function Home() {
         />
       </Link>
       <Container className="lg:pt-0">
-        <Link href="#" aria-label="Produtos com até 55% de desconto">
+        <Link href="/deals" aria-label="Produtos com até 55% de desconto">
           <PromoBanner
             src="banner-discount-mobile.svg"
             width={0}
             height={0}
-            className="w-full lg:hidden "
+            className="w-full lg:hidden"
             alt="Banner exibindo produtos com até 55% de desconto"
           />
         </Link>
