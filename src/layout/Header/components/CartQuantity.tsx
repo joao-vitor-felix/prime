@@ -21,10 +21,10 @@ export const CartQuantity = ({ product }: CartQuantity) => {
         onClick={() => decrementQuantity(product)}
         aria-label={`Diminuir quantidade do produto ${product.name}`}
       >
-        <ChevronLeft size={20} />
+        <ChevronLeft className="size-5 lg:size-6" />
       </Button>
       <span
-        className="text-sm"
+        className="text-sm lg:text-base"
         data-testid="cart-item-quantity"
         aria-label={`Quantidade do produto ${product.name}`}
       >
@@ -36,7 +36,7 @@ export const CartQuantity = ({ product }: CartQuantity) => {
         onClick={() => incrementQuantity(product)}
         aria-label={`Aumentar quantidade do produto ${product.name}`}
       >
-        <ChevronRight size={20} />
+        <ChevronRight className="size-5 lg:size-6" />
       </Button>
     </div>
   );

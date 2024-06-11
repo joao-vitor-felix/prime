@@ -12,7 +12,7 @@ export const CartPricing = ({
   totalAmount
 }: CartPricingProps) => {
   return (
-    <div className="flex flex-col gap-3 text-xs">
+    <div className="flex flex-col gap-3 text-xs lg:text-base">
       <Separator />
       <div className="flex justify-between">
         <span>Subtotal</span>

@@ -75,7 +75,7 @@ export const Cart = () => {
         </Button>
       </SheetTrigger>
 
-      <SheetContent className="flex w-[90%] flex-col gap-8">
+      <SheetContent className="flex w-[90%] flex-col gap-8 lg:min-w-[500px]">
         <SheetHeader>
           <TitleBadged icon={<ShoppingCart />}>Carrinho</TitleBadged>
         </SheetHeader>
@@ -85,7 +85,9 @@ export const Cart = () => {
             <CartItem key={product.id} product={product} />
           ))}
           {isCartEmpty && (
-            <span className="text-sm">Não há produtos no carrinho.</span>
+            <span className="text-sm lg:text-base">
+              Não há produtos no carrinho.
+            </span>
           )}
         </div>
 
@@ -97,7 +99,11 @@ export const Cart = () => {
               totalAmount={formattedTotalAmount}
             />
 
-            <Button onClick={handleCheckout} isLoading={isPending}>
+            <Button
+              onClick={handleCheckout}
+              isLoading={isPending}
+              className="lg:text-base"
+            >
               Finalizar compra
             </Button>
           </>
