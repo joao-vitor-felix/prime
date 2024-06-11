@@ -7,7 +7,6 @@ import { useTransition } from "react";
 
 import { createOrder } from "@/actions/order/createOrder";
 import { createCheckout } from "@/actions/stripe/createCheckout";
-import { Spinner } from "@/components/Spinner";
 import { TitleBadged } from "@/components/typography/TitleBadged";
 import {
   Button,
@@ -98,8 +97,7 @@ export const Cart = () => {
               totalAmount={formattedTotalAmount}
             />
 
-            <Button onClick={handleCheckout} disabled={isPending}>
-              {isPending && <Spinner />}
+            <Button onClick={handleCheckout} isLoading={isPending}>
               Finalizar compra
             </Button>
           </>
