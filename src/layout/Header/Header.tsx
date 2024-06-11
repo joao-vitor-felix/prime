@@ -23,7 +23,10 @@ export const Header = () => {
             </Button>
           </SheetTrigger>
 
-          <SheetContent side="left" className="flex flex-col gap-3">
+          <SheetContent
+            side="left"
+            className="flex flex-col gap-3 lg:min-w-[500px]"
+          >
             <SheetTitle>Menu</SheetTitle>
             <Menu />
           </SheetContent>
