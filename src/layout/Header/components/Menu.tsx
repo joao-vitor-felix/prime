@@ -50,7 +50,7 @@ export const Menu = () => {
       {!isUserAuthenticated && (
         <Button
           variant="outline"
-          className="flex gap-2"
+          className="flex gap-2 lg:text-base"
           onClick={handleLoginClick}
           aria-label="Entrar na sua conta"
         >

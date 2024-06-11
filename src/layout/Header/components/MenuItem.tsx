@@ -18,7 +18,7 @@ export const MenuItem = ({
   return (
     <SheetClose asChild>
       <Button variant="outline" asChild>
-        <Link href={href} className="flex gap-2" {...props}>
+        <Link href={href} className="flex gap-2 lg:text-base" {...props}>
           {icon}
           {linkChildren}
         </Link>
