@@ -22,7 +22,7 @@ export const CategoryItem = ({ category }: CategoryItemProps) => {
           className="w-3/5 object-contain lg:w-[30%]"
         />
       </div>
-      <span className="w-full rounded-b-lg bg-accent py-4 text-center text-sm font-bold text-white">
+      <span className="w-full rounded-b-lg bg-accent py-4 text-center text-sm font-bold text-white lg:text-base">
         {category.name}
       </span>
     </Link>
