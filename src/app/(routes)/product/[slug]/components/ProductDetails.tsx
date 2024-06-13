@@ -55,16 +55,16 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
   };
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 lg:w-2/5 lg:rounded-[10px] lg:bg-accent lg:p-10">
       <div className="flex flex-col">
         <span
-          className="text-xs text-light-gray"
+          className="text-xs text-light-gray lg:text-sm"
           role="status"
           aria-label="Informações do produto"
         >
           {CONDITION[product.condition]} | {product.sold} vendidos
         </span>
-        <h1 className="text-lg">{product.name}</h1>
+        <h1 className="text-lg lg:text-2xl">{product.name}</h1>
         {/* TODO: RATING */}
       </div>
       {doesProductHasStock && (
@@ -73,20 +73,26 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
             {doesProductHasDiscount ? (
               <>
                 <div className="flex gap-2">
-                  <h2 className="text-lg font-bold" aria-label="Preço total">
+                  <h2
+                    className="text-lg font-bold lg:text-2xl"
+                    aria-label="Preço total"
+                  >
                     {totalPrice}
                   </h2>
                   <DiscountBadge discount={product.discountPercentage} />
                 </div>
                 <span
-                  className="text-sm line-through opacity-75"
+                  className="text-sm line-through opacity-75 lg:text-base"
                   data-testid="product-base-price"
                 >
                   {basePrice}
                 </span>
               </>
             ) : (
-              <h2 className="text-lg font-bold" aria-label="Preço base">
+              <h2
+                className="text-lg font-bold lg:text-2xl"
+                aria-label="Preço base"
+              >
                 {basePrice}
               </h2>
             )}
@@ -98,10 +104,10 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
               onClick={handleDecreaseQuantity}
               aria-label={`Diminuir quantidade do produto ${product.name}`}
             >
-              <ChevronLeft size={20} />
+              <ChevronLeft />
             </Button>
             <span
-              className="text-sm"
+              className="text-sm lg:text-base"
               role="status"
               aria-label={`Quantidade do produto ${product.name}`}
             >
@@ -113,15 +119,15 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
               onClick={handleIncreaseQuantity}
               aria-label={`Aumentar quantidade do produto ${product.name}`}
             >
-              <ChevronRight size={20} />
+              <ChevronRight />
             </Button>
           </div>
         </>
       )}
 
       <div className="flex flex-col gap-2">
-        <h3 className="text-sm font-bold">Descrição</h3>
-        <p className="hyphens-auto break-words text-xs leading-5 text-light-gray">
+        <h3 className="text-sm font-bold lg:text-base">Descrição</h3>
+        <p className="hyphens-auto break-words text-xs leading-5 text-light-gray lg:text-sm lg:leading-6">
           {product.description}
         </p>
       </div>
