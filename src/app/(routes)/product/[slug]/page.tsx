@@ -37,7 +37,7 @@ const Product = async ({ params: { slug } }: ProductProps) => {
         <ProductImage name={product.name} images={product.imageUrls} />
       </div>
 
-      <Container>
+      <Container className="py-10">
         <div className="flex gap-8">
           <div className="hidden lg:flex lg:w-3/5">
             <ProductImage name={product.name} images={product.imageUrls} />
