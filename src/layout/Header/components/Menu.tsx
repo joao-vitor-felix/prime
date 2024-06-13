@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  Heart,
+  // Heart,
   Home,
   Library,
   LogIn,
@@ -87,12 +87,12 @@ export const Menu = () => {
             linkChildren="Pedidos"
             aria-label="Meus pedidos"
           />
-          <MenuItem
+          {/* <MenuItem
             href="#"
             icon={<Heart size={18} className="text-primary" />}
             linkChildren="Lista de desejos"
             aria-label="Lista de desejos"
-          />
+          /> */}
 
           <Button
             variant="outline"
