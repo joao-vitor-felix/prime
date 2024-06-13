@@ -22,7 +22,7 @@ export const CartItem = memo(({ product }: CartItemProps) => {
 
   return (
     <div className="flex w-full gap-4">
-      <div className="flex max-h-20 min-h-20 min-w-20 max-w-20 items-center justify-center rounded-lg bg-accent lg:min-w-24 lg:max-w-24">
+      <div className="flex max-h-20 min-h-20 min-w-20 max-w-20 items-center justify-center rounded-lg bg-accent lg:max-h-24 lg:min-h-24 lg:min-w-24 lg:max-w-24">
         <Image
           src={product.imageUrls[0]}
           width={0}
