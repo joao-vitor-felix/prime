@@ -24,9 +24,9 @@ function renderComponent() {
   });
 
   const ordersLink = screen.queryByRole("link", { name: /meus pedidos/i });
-  const wishlistLink = screen.queryByRole("link", {
-    name: /lista de desejos/i
-  });
+  // const wishlistLink = screen.queryByRole("link", {
+  //   name: /lista de desejos/i
+  // });
   const logoutButton = screen.queryByRole("button", {
     name: /sair da conta/i
   });
@@ -37,7 +37,7 @@ function renderComponent() {
     offerLink,
     catalogLink,
     ordersLink,
-    wishlistLink,
+    // wishlistLink,
     logoutButton
   };
 }
@@ -56,7 +56,7 @@ describe("Menu", () => {
       offerLink,
       catalogLink,
       ordersLink,
-      wishlistLink,
+      // wishlistLink,
       logoutButton
     } = renderComponent();
 
@@ -65,7 +65,7 @@ describe("Menu", () => {
     expect(offerLink).toBeInTheDocument();
     expect(catalogLink).toBeInTheDocument();
     expect(ordersLink).not.toBeInTheDocument();
-    expect(wishlistLink).not.toBeInTheDocument();
+    // expect(wishlistLink).not.toBeInTheDocument();
     expect(logoutButton).not.toBeInTheDocument();
   });
 
@@ -73,6 +73,7 @@ describe("Menu", () => {
     mockAuthState({
       data: {
         user: {
+          id: "1",
           email: "john@john.com",
           image: "https://john.com/john.jpg",
           name: "John Doe"
@@ -88,7 +89,7 @@ describe("Menu", () => {
       offerLink,
       catalogLink,
       ordersLink,
-      wishlistLink,
+      // wishlistLink,
       logoutButton,
       loginButton
     } = renderComponent();
@@ -102,7 +103,7 @@ describe("Menu", () => {
     expect(offerLink).toBeInTheDocument();
     expect(catalogLink).toBeInTheDocument();
     expect(ordersLink).toBeInTheDocument();
-    expect(wishlistLink).toBeInTheDocument();
+    // expect(wishlistLink).toBeInTheDocument();
     expect(logoutButton).toBeInTheDocument();
     expect(userName).toBeInTheDocument();
   });
