@@ -86,28 +86,28 @@ export const OrderItem = ({ order, isOpen }: OrderItemProps) => {
       <AccordionItem value={order.id}>
         <AccordionTrigger>
           <div className="flex flex-col items-start">
-            <span className="text-xs font-bold">
+            <span className="text-xs font-bold lg:text-base">
               Pedido com{" "}
               {`${order.orderProducts.length} ${order.orderProducts.length > 1 ? "produtos" : "produto"}`}
             </span>
-            <span className="text-xs text-light-gray">
+            <span className="text-xs text-light-gray lg:text-sm">
               {format(order.createdAt, "dd/MM/yyyy 'às' HH:mm")}
             </span>
           </div>
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-5">
           <div className="flex justify-between">
-            <div className="flex flex-col text-xs font-bold">
+            <div className="flex flex-col text-xs font-bold lg:text-sm">
               <span>STATUS</span>
               {getOrderStatus(order.status)}
             </div>
-            <div className="flex flex-col text-xs font-bold">
+            <div className="flex flex-col text-xs font-bold lg:text-sm">
               <span>DATA</span>
               <span className="text-light-gray">
                 {format(order.createdAt, "dd/MM/yyyy")}
               </span>
             </div>
-            <div className="flex flex-col text-xs font-bold">
+            <div className="flex flex-col text-xs font-bold lg:text-sm">
               <span>PAGAMENTO</span>
               <span className="text-light-gray">Cartão</span>
             </div>
