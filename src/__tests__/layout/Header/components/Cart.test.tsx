@@ -2,9 +2,12 @@ import { Prisma } from "@prisma/client";
 import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import { mockNextNavigation } from "@/__tests__/utils/mockNextNavitation";
 import { renderWithCartContext } from "@/__tests__/utils/renderWithCartContext";
 import { Cart } from "@/layout/Header/components/Cart";
 import { CartProduct } from "@/providers/Cart";
+
+mockNextNavigation();
 
 const renderComponent = async (cart: CartProduct[]) => {
   renderWithCartContext(<Cart />, cart, {});

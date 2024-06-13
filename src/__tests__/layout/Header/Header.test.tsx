@@ -2,8 +2,11 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import { mockAuthState } from "@/__tests__/utils/mockAuthState";
+import { mockNextNavigation } from "@/__tests__/utils/mockNextNavitation";
 
 import { Header } from "../../../layout/Header/Header";
+
+mockNextNavigation();
 
 const renderComponent = () => {
   render(<Header />);
