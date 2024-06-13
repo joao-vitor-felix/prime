@@ -13,7 +13,7 @@ export const DiscountBadge = ({ className, discount }: DiscountBadgeProps) => {
   return (
     <Badge className={cn("w-fit", className)}>
       <ArrowDown size={16} />
-      <span className="font-bold">{discount}%</span>
+      <span className="font-bold lg:text-sm">{discount}%</span>
     </Badge>
   );
 };
