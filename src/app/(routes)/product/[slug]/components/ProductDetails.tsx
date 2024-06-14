@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
 import { DiscountBadge } from "@/components/DiscountBadge";
-import { Button } from "@/components/ui";
+import { Button, useToast } from "@/components/ui";
 import { CONDITION } from "@/constants/CONDITION";
 import { formatPrice } from "@/helpers/formatPrice";
 import { useCartContext } from "@/hooks/useCartContext";
@@ -28,6 +28,7 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
   const { addToCart } = useCartContext();
 
   const [quantity, setQuantity] = useState(1);
+  const { toast } = useToast();
 
   const handleIncreaseQuantity = () => {
     setQuantity(prev => prev + 1);
@@ -52,6 +53,10 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
 
     addToCart(productToAdd);
     setQuantity(1);
+    toast({
+      title: "Produto adicionado ao carrinho!",
+      variant: "success"
+    });
   };
 
   return (
