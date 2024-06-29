@@ -28,7 +28,7 @@ export const ProductItem = ({ product }: ProductItemProps) => {
           width={0}
           height={0}
           sizes="100vw"
-          className="size-auto max-h-[60%] max-w-[70%] object-contain"
+          className="size-auto max-h-[60%] min-w-[60%] max-w-[70%] object-contain"
         />
       </div>
 
