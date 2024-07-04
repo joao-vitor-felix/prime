@@ -25,13 +25,15 @@ const renderComponent = async (cart: CartProduct[]) => {
   const subtotalAmount = screen.queryByTestId("cart-subtotal-amount");
   const discountAmount = screen.queryByTestId("cart-discount-amount");
   const totalAmount = screen.queryByTestId("cart-total-amount");
+  const cartQuantity = screen.queryByTestId("cart-quantity");
 
   return {
     cartTitle,
     emptyCartMessage,
     subtotalAmount,
     discountAmount,
-    totalAmount
+    totalAmount,
+    cartQuantity
   };
 };
 
@@ -295,5 +297,32 @@ describe("Cart", () => {
     expect(subtotalAmount).toHaveTextContent("R$ 2.100,00");
     expect(discountAmount).toHaveTextContent("- R$ 210,00");
     expect(totalAmount).toHaveTextContent("R$ 1.890,00");
+  });
+
+  it("should display correct cart quantity", async () => {
+    const cart: CartProduct[] = [
+      {
+        id: "1",
+        name: "Product 1",
+        basePrice: new Prisma.Decimal(100),
+        discountPercentage: 10,
+        totalPrice: 90,
+        imageUrls: ["https://example.com/image.jpg"],
+        quantity: 10
+      },
+      {
+        id: "2",
+        name: "Product 2",
+        basePrice: new Prisma.Decimal(500),
+        discountPercentage: 10,
+        totalPrice: 450,
+        imageUrls: ["https://example.com/image.jpg"],
+        quantity: 54
+      }
+    ];
+
+    const { cartQuantity } = await renderComponent(cart);
+
+    expect(cartQuantity).toHaveTextContent("64");
   });
 });

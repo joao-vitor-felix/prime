@@ -23,8 +23,14 @@ import { CartItem } from "./CartItem";
 import { CartPricing } from "./CartPricing";
 
 export const Cart = () => {
-  const { cart, subtotalAmount, totalAmount, discountAmount, clearCart } =
-    useCartContext();
+  const {
+    cart,
+    subtotalAmount,
+    totalAmount,
+    discountAmount,
+    clearCart,
+    cartQuantity
+  } = useCartContext();
 
   const isCartEmpty = cart.length === 0;
 
@@ -70,11 +76,22 @@ export const Cart = () => {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline" size="icon" aria-label="Carrinho de compras">
-          <ShoppingCart />
+        <Button
+          variant="outline"
+          size="icon"
+          aria-label="Carrinho de compras"
+          className="relative"
+        >
+          <ShoppingCart className="z-0" />
+          <span
+            className="absolute right-[3px] top-[-3px] z-50 text-[10px] font-bold text-primary"
+            data-testid="cart-quantity"
+            aria-label="Quantidade de itens do carrinho"
+          >
+            {cartQuantity}
+          </span>
         </Button>
       </SheetTrigger>
-
       <SheetContent className="flex w-[90%] flex-col gap-8 lg:min-w-[500px]">
         <SheetHeader>
           <TitleBadged icon={<ShoppingCart />}>Carrinho</TitleBadged>

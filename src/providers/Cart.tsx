@@ -27,6 +27,7 @@ export type CartContextType = {
   subtotalAmount: number;
   totalAmount: number;
   discountAmount: number;
+  cartQuantity: number;
 };
 
 export const CartContext = createContext<CartContextType>({
@@ -38,7 +39,8 @@ export const CartContext = createContext<CartContextType>({
   clearCart: () => {},
   subtotalAmount: 0,
   totalAmount: 0,
-  discountAmount: 0
+  discountAmount: 0,
+  cartQuantity: 0
 });
 
 type CartContextProviderProps = {
@@ -72,6 +74,10 @@ export const CartContextProvider = ({
 
   const totalAmount = cart.reduce((accumulator, currentValue) => {
     return accumulator + currentValue.totalPrice * currentValue.quantity;
+  }, 0);
+
+  const cartQuantity = cart.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue.quantity;
   }, 0);
 
   const discountAmount = subtotalAmount - totalAmount;
@@ -166,7 +172,8 @@ export const CartContextProvider = ({
         clearCart,
         subtotalAmount,
         discountAmount,
-        totalAmount
+        totalAmount,
+        cartQuantity
       }}
     >
       {children}
