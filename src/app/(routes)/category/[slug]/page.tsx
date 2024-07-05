@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 
 import { getCategoryWithProducts } from "@/actions/category/getCategoryWithProducts";
 import { ProductItem } from "@/components/ProductItem";
+import { ProductSection } from "@/components/ProductSection";
 import { TitleBadged } from "@/components/typography/TitleBadged";
 import { Container } from "@/components/ui";
 import { CATEGORIES, Categories } from "@/constants/CATEGORIES.";
@@ -51,14 +52,11 @@ const CategoryProducts = async ({
         </Link>
         <TitleBadged icon={CATEGORY_ICON[slug]}>{category.name}</TitleBadged>
       </div>
-      <section
-        className="grid grid-cols-2 justify-items-center gap-8 md:grid-cols-4 lg:grid-cols-category-item-grid"
-        aria-label={`Produtos da categoria ${category.name}`}
-      >
+      <ProductSection aria-label={`Produtos da categoria ${category.name}`}>
         {category.products.map(product => (
           <ProductItem key={product.id} product={product} />
         ))}
-      </section>
+      </ProductSection>
     </Container>
   );
 };

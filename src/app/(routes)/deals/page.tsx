@@ -3,6 +3,7 @@ import { Metadata } from "next";
 
 import { getDealProducts } from "@/actions/product/getDealProducts";
 import { ProductItem } from "@/components/ProductItem";
+import { ProductSection } from "@/components/ProductSection";
 import { TitleBadged } from "@/components/typography/TitleBadged";
 import { Container } from "@/components/ui";
 
@@ -22,14 +23,11 @@ const Deals = async () => {
         OFERTAS
       </TitleBadged>
 
-      <section
-        className="grid grid-cols-2 justify-items-center gap-8 md:grid-cols-4 lg:grid-cols-category-item-grid"
-        aria-label="Produtos em oferta"
-      >
+      <ProductSection aria-label="Produtos em oferta">
         {deals.map(product => (
           <ProductItem key={product.id} product={product} />
         ))}
-      </section>
+      </ProductSection>
     </Container>
   );
 };
