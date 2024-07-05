@@ -1,4 +1,4 @@
-import { BadgeCheck, Menu as MenuIcon } from "lucide-react";
+import { BadgeCheck, Menu as MenuIcon, Search } from "lucide-react";
 import Link from "next/link";
 
 import {
@@ -37,7 +37,14 @@ export const Header = () => {
           <span className="font-bold">Prime</span>
         </Link>
 
-        <Cart />
+        <div className="flex items-center gap-2">
+          <Link href="/search">
+            <Button variant="outline" size="icon">
+              <Search />
+            </Button>
+          </Link>
+          <Cart />
+        </div>
       </div>
     </header>
   );
