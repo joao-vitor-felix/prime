@@ -43,10 +43,16 @@
     @apply border-border;
   }
   body {
-    @apply h-full bg-background text-foreground;
+    @apply h-full bg-background text-foreground scrollbar;
   }
 
   html {
     @apply h-full;
+  }
+}
+
+@layer utilities {
+  .scrollbar {
+    @apply [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:bg-primary [&::-webkit-scrollbar-thumb]:rounded-full;
   }
 }

@@ -97,7 +97,7 @@ export const Cart = () => {
           <TitleBadged icon={<ShoppingCart />}>Carrinho</TitleBadged>
         </SheetHeader>
 
-        <div className="flex size-full flex-col gap-5 overflow-y-auto">
+        <div className="scrollbar flex size-full flex-col gap-5 overflow-y-auto">
           {cart.map(product => (
             <CartItem key={product.id} product={product} />
           ))}
