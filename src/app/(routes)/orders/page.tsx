@@ -1,6 +1,7 @@
 import { ShoppingBasket } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 import { getOrders } from "@/actions/order/getOrders";
 import { TitleBadged } from "@/components/typography/TitleBadged";
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 const Orders = async () => {
   const session = await auth();
 
-  if (!session) return;
+  if (!session) redirect("/");
 
   const orders = await getOrders(session?.user.id);
 
