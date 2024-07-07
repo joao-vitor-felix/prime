@@ -9,8 +9,6 @@ import { Container } from "@/components/ui";
 import { CategoriesButtonList } from "./components/CategoriesButtonList";
 import { PromoBanner } from "./components/PromoBanner";
 
-export const dynamic = "force-dynamic";
-
 export default async function Home() {
   const deals = await getDealProducts();
   const keyboards = await getCategoryWithProducts("keyboards");

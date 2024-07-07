@@ -7,8 +7,6 @@ import { ProductSection } from "@/components/ProductSection";
 import { TitleBadged } from "@/components/typography/TitleBadged";
 import { Container } from "@/components/ui";
 
-export const dynamic = "force-dynamic";
-
 export const metadata: Metadata = {
   title: "Ofertas | Prime",
   description: "Ofertas de produtos"

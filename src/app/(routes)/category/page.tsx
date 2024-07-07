@@ -7,8 +7,6 @@ import { prisma } from "@/lib/prisma";
 
 import { CategoryItem } from "./components/CategoryItem";
 
-export const dynamic = "force-dynamic";
-
 export const metadata: Metadata = {
   title: "Categorias | Prime",
   description: "Categorias de produtos"
