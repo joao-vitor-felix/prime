@@ -83,7 +83,7 @@ async function main() {
         slug: "logitech-mx-master-3s",
         brandId: brandMap["Logitech"],
         description:
-          "Resolução máxima de 8000 DPI. Até 70 dias com uma carga completa. Bateria recarregável (500mAh). Conexão com até 3 dispositivos. 3 horas de uso com uma carga de 1 minuto. Tecnologia sem fio avançada de 2,4 GHz. Tracking em qualquer superficíe. Cliques Silenciosos. Rolagem MagSpeed. Design Ergonômico. Resolução máxima de 8000 DPI. Até 70 dias com uma carga completa. Bateria recarregável (500mAh). 3 horas de uso com uma carga de 1 minuto. Tecnologia sem fio avançada de 2,4 GHz. COMPATIBILIDADE Windows 10,11 ou superior macOS 10.15 ou superior iOS 13.4 ou superior iPadOS 14 ou superior Linux Chrome OSTM AndroidTM 5.0 ou superior BLUETOOTH® Tecnologia Bluetooth de baixa energia.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/f61bcf7e-0360-42b9-80ca-1777b1e71620-otetkp.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/6d7cd353-49b3-415d-bb59-93adec9b41ea-l4plt0.png",
@@ -99,7 +99,7 @@ async function main() {
         slug: "logitech-pro-x-superlight",
         brandId: brandMap["Logitech"],
         description:
-          "Mouse PRO mais leve e rápido de todos os tempos. A nova arma perfeita para os melhores profissionais do mundo, que pesa menos de 63 gramas e proporciona deslizamento quase sem nenhum atrito. O PRO X SUPERLIGHT dá prosseguimento à nossa filosofia de design com ZERØ OPOSIÇÃO — nosso compromisso de remover todos os obstáculos para criar a conexão mais real possível entre o jogador e o jogo. Resultado de nossa colaboração contínua com os melhores profissionais do esporte, o PRO X SUPERLIGHT foi projetado com um único objetivo: o de criar um mouse para jogos sem fio PRO mais leve possível, mantendo a qualidade, a integridade estrutural e os padrões profissionais que a Logitech G oferece. Chegue em primeiro mais rápido do que nunca..",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/cfe93603-a025-46b9-bede-b8a1c4bc25b4-idaumz.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/5c044fc3-91a8-4265-9aab-a57ccbff9a2b-m98ja0.png",
@@ -115,7 +115,7 @@ async function main() {
         slug: "logitech-g305-lightspeed",
         brandId: brandMap["Logitech"],
         description:
-          "O G305 apresenta o sensor HERO de última geração com sensibilidade de 200 a 12.000 DPI para precisão de nível de competição. A tecnologia sem fio LIGHTSPEED oferece desempenho super rápido de 1ms.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/8410e0d3-4441-48da-a5b4-c1bf249dd2c0-6pfvtn.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/28be46e5-3657-4c4e-8e3a-2717fba21350-2ti76m.png",
@@ -131,7 +131,7 @@ async function main() {
         slug: "hyperx-pulsefire-dart",
         brandId: brandMap["HyperX"],
         description:
-          "HyperX Pulsefire Dart™ é um mouse sem fio de nível de jogos com uma conexão confiável 2,4GHz RF que o fará se perguntar por que esperou tanto para cortar o fio. Um adaptador sem fio está incluído para ampliar o alcance para configurações em PCs. Tem certificado Qi para carregamento sem fio1 e pode funcionar até 50 horas2 com uma única carga.\nCom um sensor Pixart 3389 e um design de botão dividido apresentando chaves de tecla Omron confiáveis, você terá a precisão necessária para esmagar os oponentes. Com modelo ergonômico, conta com apoios laterais em material sintético almofadado projetados para o seu conforto durante aquelas noites de jogo. Customize a iluminação RGB, crie macros, controle a vida da bateria e ajuste as configurações DPI com o software fácil de usar HyperX NGENUITY.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/5c7581c9-d2ff-48cc-9295-0162fb1a8334-1xd5uq.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/2a103a1f-0b55-43cd-8b23-e7bf662da750-cmorrv.png",
@@ -147,7 +147,7 @@ async function main() {
         slug: "razer-deathadder-v2-pro",
         brandId: brandMap["Razer"],
         description:
-          "Com mais de 10 milhões de Razer DeathAdders vendidos, o mouse para jogos mais celebrado e premiado do mundo ganhou sua popularidade através de seu design ergonômico excepcional. Perfeitamente adequado para uma aderência na palma da mão, também funciona bem com estilos de garra e ponta dos dedos. O Razer DeathAdder V2 continua este legado, mantendo sua forma exclusiva enquanto perde mais peso para um manuseio mais rápido e melhorar o seu jogo. Indo além da ergonomia convencional do escritório, o design otimizado também oferece maior conforto para jogos — importante para aqueles ataques longos ou quando você está fazendo sua classificação na escada. Desfrute do movimento liso do mouse em qualquer superfície com os pés do mouse feitos do mais puro e mais alto grau de PTFE.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/81e56317-826f-4e89-8a5f-52f4cb29de12-5jk68j.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/657420f8-b3c8-4573-8e4e-4efb55bc957b-g0npvu.png",
@@ -163,7 +163,7 @@ async function main() {
         slug: "logitech-m720-triathlon",
         brandId: brandMap["Logitech"],
         description:
-          "Conheça o mouse de alta precisão que é integrado para conforto definitivo, resistência e versatilidade. Com controles extras, uma rolagem de modo duplo e rastreamento dpi ajustável, o M720 lhe fornece o poder para adereçar qualquer tarefa.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/b6cfa852-8350-4b3a-a307-8a9cf7598c8b-j0xzh3.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/c1886b7c-4fbf-4363-a2fe-1b19bede2320-6axklo.png",
@@ -195,7 +195,7 @@ async function main() {
         slug: "logitech-mx-keys-mini",
         brandId: brandMap["Logitech"],
         description:
-          "Chegou o MX Keys Mini, um teclado sem fio, compacto, inteligente e poderoso. Possui teclas com luz de fundo que acendem no momento que as mão se aproximam. Oferece também teclas de ditado inteligente, ativação e desativação de áudio e teclas de Emoji.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/fd920a02-24d9-464c-80a7-8323a2c48a74-33zg48.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/957b8490-e2e6-4032-8bb3-bdfff39b880a-w8rm3f.png",
@@ -211,7 +211,7 @@ async function main() {
         slug: "logitech-mx-keys-s",
         brandId: brandMap["Logitech"],
         description:
-          "Experimente um novo nível de desempenho com o MX Keys S. O MX Keys S é um teclado de alto desempenho, projetado para digitação confortável, rápida e fluida.\nAgora seu teclado conta com iluminação ainda mais inteligente, as teclas de luz de fundo acendem quando suas mãos se aproximam do teclado e automaticamente se iluminam ou se apagam para se adequar ao seu ambiente. Com o software Logi Option+ você pode configurar a duração e intensidade das luzes do seu MX Keys S.\nUma tecla, é tudo o que você precisa para automatizar suas tarefas repetitivas com o Smart Action, função disponível no software Logi Option+, idealizada para facilitar sua vida e aumentar sua produtividade.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/a9b86133-a858-42d7-9073-c3b7368d72f8-m9yl8y.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/c17e7d6a-d701-476d-a9e4-0747c8c6a28e-31wytt.png",
@@ -227,7 +227,7 @@ async function main() {
         slug: "logitech-pop-keys",
         brandId: brandMap["Logitech"],
         description:
-          "Digitação mecânica fluida e silenciosa: o teclado mecânico MX Mini possui teclas tactile silenciosas que proporcionam uma sensação e fluxo de outro nível\nTeclas de baixo perfil, mais conforto: um layout de teclado projetado para precisão sem esforço, compacto e com teclas mecânicas de baixo perfil para mais ergonomia.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/8526f63f-92ea-4826-9b68-cef2ab7495f0-u67teu.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/9a405bef-ed08-4849-b3a7-39fd13ece3db-qeno4j.png",
@@ -243,7 +243,7 @@ async function main() {
         slug: "logitech-mx-mechanical",
         brandId: brandMap["Logitech"],
         description:
-          "Digitação mecânica fluida e silenciosa: o teclado mecânico MX Mini possui teclas tactile silenciosas que proporcionam uma sensação e fluxo de outro nível\nTeclas de baixo perfil, mais conforto: um layout de teclado projetado para precisão sem esforço, compacto e com teclas mecânicas de baixo perfil para mais ergonomia",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/42132fbf-f0d2-4076-bc24-540e267a583b-tbfuuf.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/d9118c4d-41e7-4ee8-9172-086b214188df-918ah0.png",
@@ -259,7 +259,7 @@ async function main() {
         slug: "epomaker-th80",
         brandId: brandMap["Epomaker"],
         description:
-          "Inspirado pela revolução industrial, o teclado mecânico da série EPOMAKER Theory foi projetado com teclados teóricos, com símbolos como lâmpada, garrafa de laboratório, ferramentas, etc. Nós o nomeamos Teoria por causa dessas teclas icônicas. Toda revolução industrial traz uma revolução de aprendizado e é assim que a EPOMAKER está trabalhando e aprendendo ao longo dos anos para entender melhor a indústria de teclados mecânicos.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/8eaf4318-4ec9-43a8-9fd4-300bcafc2bc3-t8tglh.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/d7dbf90f-16b4-4bd7-ba48-0b071a4fb3da-ph9bb6.png",
@@ -275,7 +275,7 @@ async function main() {
         slug: "redragon-gamer-ashe",
         brandId: brandMap["Redragon"],
         description:
-          "- Layout compacto de 79 teclas para os gamers que procuram deixar o máximo de espaço possível sobre a mesa sem perder as teclas numéricas.\n- Iluminação RGB.\n- Keycaps feitas com o método double shot injection resultando em legendas duradouras.\n- Teclado com cabo USB-C destacável\n- Teclado low profile",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/26d6a13c-41e4-412a-8139-893f29e6ed22-b14pyz.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/3161bf91-3d4a-442c-a1da-5a5f01bfa6d3-jmrqw.png",
@@ -307,7 +307,7 @@ async function main() {
         slug: "logitech-zone-vibe-100",
         brandId: brandMap["Logitech"],
         description:
-          "Expresse o seu estilo e viva a experiência de um áudio imersivo ao trabalhar e jogar com o Headset Sem Fio Logitech Zone Vibe 100. Com alto-falantes poderosos de 40 mm que contam com graves baixos e encorpados, agudos nítidos e baixa distorção de áudio, o Headset sem fio da Logitech dá vida às suas reuniões. Leve e respirável, ele pesa apenas 185 gramas, além de ser confortável para usar o dia todo, com almofadas macias com adaptação por memória e um design ajustável.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/617381f6-ae52-4837-bff6-b4af3e8cc9de-cuwa00.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/fef43c0a-7b84-48f2-9005-2ef272854fb7-59kdnh.png",
@@ -323,7 +323,7 @@ async function main() {
         slug: "logitech-pro-x-2-lightspeed",
         brandId: brandMap["Logitech"],
         description:
-          "Desenvolvido por profissionais. PROJETADO PARA A VITÓRIA. O headset PRO X 2 LIGHTSPEED apresenta som pro-grade, LIGHTSPEED sem fio, além de enorme conforto para os níveis mais altos de competição. Ouça cada passo, ação e movimento com a paisagem sonora imersiva oferecida pelos drivers de grafeno.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/377d85a6-2e3a-4367-9250-d528aea30440-cnu60s.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/e32d6366-1371-4e9b-b594-c3a96d9d8480-3e0zb3.png",
@@ -339,7 +339,7 @@ async function main() {
         slug: "logitech-astro-a30",
         brandId: brandMap["Logitech"],
         description:
-          "Leve sua experiência em jogos a um nível totalmente novo. Projetado para a comunidade gamer, os headsets A10 possuem construção resistente e conforto prolongado para combater o cansaço, e para que você possa jogar por ainda mais tempo.\nO headset A10 conta com drivers ASTRO Audio de 40mm, que permitem ouvir seu jogo e o de seus companheiros de equipe de forma clara e precisa. Com baixa latência e comunicação de voz precisa, você estará sempre em sincronia com sua equipe.Os recursos do microfone unidirecional, o controle de volumeem linha e a funcionalidade flip-to-mute permitem que você tenha total controle da sua experiência de áudio em jogos.\nBem vindo à Família ASTRO!",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/f7ab9454-bce6-4674-abde-7cae1ea590ec-3us24m.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/6b9e2410-f3bd-4d04-9ba2-28712dfb3102-lh3hy5.png",
@@ -355,7 +355,7 @@ async function main() {
         slug: "logitech-zone-wired-earbuds",
         brandId: brandMap["Logitech"],
         description:
-          "Ofereça sua melhor imagem e um som excelente nas videochamadas com os Zone Wired Earbuds. Os avançados microfones com redução de ruídos localizados no fone esquerdo capturam claramente cada palavra. O som in-ear oferece qualidade profissional. Conecte instantaneamente seu celular 1Confira as especificações do dispositivo para verificar a compatibilidade, tablet1Confira as especificações do dispositivo para verificar a compatibilidade ou computador para criar o seu espaço onde quer que esteja trabalhando.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/43c7bcf0-7362-49f8-bbde-f24311f80308-l6h1vy.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/083f8a9a-dc35-45ca-b035-35441e6cb87f-3wikph.png",
@@ -371,7 +371,7 @@ async function main() {
         slug: "hyperx-cloud-stinger-2",
         brandId: brandMap["HyperX"],
         description:
-          "Com um novo design e 2 anos de DTS Headphone:X Spatial Audio, o Cloud Stinger 2 mantém os fundamentos do Cloud Stinger e os refina.\nAinda pesando menos de 300g, o Cloud Stinger 2 é leve, mas também tem um grande impacto de áudio. Obtenha uma ampla resposta de frequência para que você não perca pistas de áudio importantes.que denunciem seus oponentes.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/c2199365-8f0f-41e8-84c3-53c0037f69b8-oxvmyz.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/9e211dba-7ae0-4777-91a4-4e0ed7c38aaa-dzx3s.png",
@@ -387,7 +387,7 @@ async function main() {
         slug: "razer-kraken-x",
         brandId: brandMap["Razer"],
         description:
-          "E se dissermos que você pode ter uma imersão completa nos jogos sem sentir que está usando um headset? Conheça o Razer Kraken X Lite. Ultraleve com apenas 250g e ultra imersivo com som surround 7.1, sente-se e aproveite por horas e horas–jogar por longos períodos nunca foi tão confortável.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/7cefac61-28f5-42cc-8441-9e6d89cebbc5-pbckc3.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/283b1b0e-8ae8-439c-a75d-876d4fb8d4a9-kmrv1m.png",
@@ -419,7 +419,7 @@ async function main() {
         slug: "logitech-powerplay",
         brandId: brandMap["Logitech"],
         description:
-          "Com o Mousepad Gamer PowerPlay da Loigitech esqueça os atrasos na entrada, desconexões com o campo de energia do seu mousepad PowerPlay, você ganha um corrente de carga direta para o seu mouse sem fio. As tecnologias PowerCore e Lighspeed presentes no mousepad Gamer da Logitech, superam qualquer barreira do sem fio.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/2a40a31f-f466-488f-bbc3-5ab9b20f358d-on5ldd.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/cf604de3-6ba5-43f1-8a0c-d8987f0e6d75-l22wj0.png",
@@ -435,7 +435,7 @@ async function main() {
         slug: "logitech-desk-mat",
         brandId: brandMap["Logitech"],
         description:
-          "O Desk Mat da Logitech oferece o deslizamento perfeito e silencioso, sem esforço. É fabricado com poliéster reciclado para a superfície e camada interna. Uma base de borracha antiderrapante garante maior estabilidade.\nO Desk Mat da Logitech permite que você encontre o deslizamento perfeito e defina seu estilo, tudo isso enquanto mantém sua escrivaninha protegida. Escolha a cor que mais te representa: Lavender, Dark Rose ou Mid Grey.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/7c6ea5b4-8536-43ae-ac15-339cb9b02608-n9raei.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/68728165-33db-4faf-bb9f-3ae43960bede-ji7547.png",
@@ -451,7 +451,7 @@ async function main() {
         slug: "logitech-g740",
         brandId: brandMap["Logitech"],
         description:
-          "Sua superfície te oferecerá uma fricção ideal para jogos com baixo DPI, o que melhora o controle do mouse e o posicionamento preciso do cursor. Oferece mais amortecimento com seus 5 mm de espessura, para maior conforto e remove mais saliências da superfície da mesa.\nPartidas, paradas e mudanças de direção rápidas e abruptas não são problemas para o G740. A textura consistente da superfície melhora o desempenho do sensor, e sua base de borracha macia mantém a estabilidade.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/46dff660-b4be-4423-88f3-0b81e673c923-culmza.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/1a04648d-0b54-452d-9abe-18514f5d41ad-59v0o7.png",
@@ -467,7 +467,7 @@ async function main() {
         slug: "logitech-mousepad-studio-series",
         brandId: brandMap["Logitech"],
         description:
-          "O Mouse Pad Studio Series da Logitech garante um deslizamento perfeito e silencioso. O revestimento à prova de derramamento resiste a contratempos acidentais. A base antiderrapante mantém uma fixação firme em sua mesa, não importa o que aconteça.\nO Mouse Pad Studio Series da Logitech é um mouse pad macio, suave, portátil e moderno que lhe permite deslizar com seu mouse favorito Logitech Mouse. A trama fina corta o atrito, assim seu mouse desliza sem esforço e silenciosamente, enquanto o revestimento à prova de derramamento resiste a contratempos acidentais.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/c3a7ba47-0e76-4031-8b3d-5d94dbb61c7b-k45quc.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/983fb259-141f-4956-a602-383967a998d0-61tj3.png",
@@ -483,7 +483,7 @@ async function main() {
         slug: "force-one-skyhawk-dark",
         brandId: brandMap["Force One"],
         description:
-          "Chega de movimentos limitados! aproveite todo o tamanho, estilo e deslize do force one skyhawk em sua edição de maior tamanho!\nO mousepad force one skyhawk conta com uma superfície gigante e profissional em tecido mesh fibertek de alta qualidade para movimentos rápidos, longos e precisos, proporcionando maior durabilidade, conforto e espaço para suas batalhas.\nJá a base antideslizante garante o apoio que você precisa para fazer suas jogadas com a segurança de um jogador profissional.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/1ec8f2a5-a714-463c-82b0-52eeb16fa4c2-x7k2s6.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/be28dbfc-e934-4825-a014-3a82082d5fcc-vezwlp.png",
@@ -499,7 +499,7 @@ async function main() {
         slug: "force-one-skyhawk-snow",
         brandId: brandMap["Force One"],
         description:
-          "O mousepad Force One Skyhawk conta com uma superfície gigante e profissional em tecido Mesh Fibertek de alta qualidade para movimentos rápidos, longos e precisos, proporcionando maior durabilidade, conforto e espaço para suas batalhas. Já a base antideslizante garante o apoio que você precisa para fazer suas jogadas com a segurança de um jogador profissional.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/da403a17-711f-46b2-960c-ffd52c8e6d47-x7tx5v.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/6e479966-479d-4e5e-aced-b287b987d3e7-veq280.png",
@@ -531,7 +531,7 @@ async function main() {
         slug: "dell-s2421hn",
         brandId: brandMap["Dell"],
         description:
-          "Bela aparência: design moderno e elegante com um padrão texturizado sutil na parte de trás do monitor que proporciona visual exclusivo. O sistema oferece uma combinação harmônica de estilo e qualidade incríveis para todos os espaços.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/03f48aad-2863-4c6b-8648-23cfe83bb9a0-l17xro.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/a28821c7-3e39-41d3-ad41-33ee48844832-owwhm1.png",
@@ -547,7 +547,7 @@ async function main() {
         slug: "dell-p2422h",
         brandId: brandMap["Dell"],
         description:
-          "Produza por mais tempo, independentemente do local de trabalho. Reduza a luz azul prejudicial usando este elegante monitor FHD de 23,8 com tecnologia ComfortView Plus.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/0caa2bb4-12c5-4e44-b2c8-2e38b86ae1f9-rax9q4.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/f3b50fbd-6bbc-4dea-b678-54317bd4bd2a-t64umf.png",
@@ -563,7 +563,7 @@ async function main() {
         slug: "dell-p2723qe",
         brandId: brandMap["Dell"],
         description:
-          "Experimente a produtividade pura e simples em um monitor 4K de 27” com ampla conectividade e ComfortView Plus.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/90415646-1eee-4ef0-ac08-4194409eeef7-60cp0c.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/7a904eda-0617-4754-8fc7-7dc3e9d6850f-j2mxl3.png",
@@ -579,7 +579,7 @@ async function main() {
         slug: "dell-s3422dwg",
         brandId: brandMap["Dell"],
         description:
-          "Monitor curvo WQHD de 34” com VESA DisplayHDR 400 e taxa de atualização de 144 Hz que proporciona uma experiência gamer realmente imersiva.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/51fdb6fd-02f7-423f-9393-1cb6292644fb-1wl9gu.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/b933ddc7-22fc-49ad-9a33-dbd77024acf8-5o5er5.png",
@@ -595,7 +595,7 @@ async function main() {
         slug: "dell-s3222dgm",
         brandId: brandMap["Dell"],
         description:
-          "Monitor curvo QHD de 31,5” com tempo de resposta de 1 ms (MPRT)/2 ms (cinza a cinza), taxa de atualização de 165 Hz e cores 99% sRGB para oferecer imagens nítidas aos games e tornar a jogabilidade imersiva.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/7405417c-9267-4bb6-9756-e39865cc32be-yi0au.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/c2f776de-148b-440c-ae6c-2598b577f406-4q25l5.png",
@@ -611,7 +611,7 @@ async function main() {
         slug: "dell-aw2524hf",
         brandId: brandMap["Dell"],
         description:
-          "Experimente incrível nitidez de movimento e capacidade de resposta com o monitor IPS de 24,5”, taxa de atualização de 500 Hz e AMD FreeSync™ Premium.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/ab930783-f290-45ed-9d39-a2ed19428e48-al6r5z.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/fe4719d4-fa00-42c5-a5bf-0374af9b590f-ecqwga.png",
@@ -643,7 +643,7 @@ async function main() {
         slug: "logitech-surround-sound-z607",
         brandId: brandMap["Logitech"],
         description:
-          "Com 160 watts de potência de pico, este sistema de caixas de som 5.1 em áudio de alta qualidade que envolve todo o espaço soando incrível. Desfrute do verdadeiro som surround de qualquer fonte - sua TV, telefone, computador, console de jogos deve estar conectado à TV via RCA e muito mais. Você pode até ouvir áudio de cartões SD, pen drives ou rádio FM. O driver de subwoofer de 133,35 mm emite graves que você pode sentir, enquanto os cabos traseiros extralongos e o controle remoto, incluídos, facilitam a configuração e o uso.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/4b8b33b7-8112-4134-b761-5533986c00a3-b5j8co.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/72df2fbd-3284-45d1-a98d-7e1d73455378-94oc0r.png",
@@ -659,7 +659,7 @@ async function main() {
         slug: "logitech-dock",
         brandId: brandMap["Logitech"],
         description:
-          "O trabalho remoto não deveria ser um fardo. O Logi Dock é uma dock station USB-C all-in-one que simplifica a configuração do escritório em casa, reduz a desordem da área de trabalho e ajuda os funcionários remotos a se sentirem mais produtivos. Certificado para as principais plataformas de videoconferência e fácil de configurar, o Logi Dock conecta tudo em uma única unidade arrumada que dispensa a necessidade de periféricos extras e elimina um emaranhado de cabos e fios.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/fb7e3aed-bc97-4bf6-bb19-0c3ead62267b-cukwpp.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/7e36c52b-4e6b-47c4-bda6-7a44b5d47beb-59vqxs.png",
@@ -675,7 +675,7 @@ async function main() {
         slug: "sony-sa-z9r-speakers",
         brandId: brandMap["Sony"],
         description:
-          "Experimente som surround com o alto-falante traseiro sem fio do SA-Z9R.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/e617e5a5-0f14-486e-b046-89afc9d86233-o2pxdo.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/d89fa91f-035d-44ee-a195-01c8451a4724-9inzr3.png",
@@ -691,7 +691,7 @@ async function main() {
         slug: "sony-xb43-extra-bass",
         brandId: brandMap["Sony"],
         description:
-          "A coluna sem fios SRS-XB43 combina graves profundos com vozes nítidas para proporcionar um som de festival. Além disso, é resistente e fácil de utilizar, pelo que todos podem simplesmente desfrutar da festa. Ver slideshow",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/ff6a151f-09e6-4ce0-abf7-fece07f8dc92-gxgbj0.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/a17465ac-d2d0-4008-bb73-2118295feed2-kte061.png",
@@ -707,7 +707,7 @@ async function main() {
         slug: "sony-xb23-extra-bass",
         brandId: brandMap["Sony"],
         description:
-          "Compacta, leve e fácil de transportar, seja para onde for, a SRS-XB23 tem de ser o primeiro item na mala.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/02cb02bd-3acf-4c79-bc43-9e9596065521-f1tve5.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/5b7c69c0-eecc-46ba-a1ef-b3a9a74c058a-x6aj1m.png",
@@ -723,7 +723,7 @@ async function main() {
         slug: "sony-ht-s200f-soundbar",
         brandId: brandMap["Sony"],
         description:
-          "Dê aos seus programas e filmes favoritos o som que eles merecem com uma barra de som 2.1 canais e subwoofer incorporado. Esta solução de economia de espaço é projetada para combinar com a decoração da sua casa e coloca você no meio da ação com a frente S-Force Pro. HDMI ARC2 e tecnologia Bluetooth 1 garantem uma conexão perfeita com a sua TV sem todos os fios. NFC: Não; Terminais de saída de entrada: HDMI (ARC), entrada de áudio óptico, USB tipo A. Material do revestimento: Metal",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         imageUrls: [
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/8fe65d9b-e965-4e39-82ce-e850d0a0549e-uk14e7.png",
           "https://uploadthing-prod-sea1.s3.us-west-2.amazonaws.com/ff292fd5-a462-41e9-8452-0b98ea99cb1a-y2iuzo.png",
@@ -740,7 +740,7 @@ async function main() {
       data: speakers
     });
 
-    console.log("Seed completed successfully");
+    console.log("✅ Seed completed successfully");
   } catch (error) {
     console.error("Error seeding database:", error);
   } finally {
@@ -748,12 +748,4 @@ async function main() {
   }
 }
 
-main()
-  .then(async () => {
-    await prisma.$disconnect();
-  })
-  .catch(async e => {
-    console.error(e);
-    await prisma.$disconnect();
-    process.exit(1);
-  });
+main();
