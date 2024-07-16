@@ -40,9 +40,12 @@ export default async function Home() {
         <CategoriesButtonList />
 
         <section className="flex flex-col gap-5" aria-label="Ofertas">
-          <Link href="/deals" className="w-fit">
+          <div className="flex w-fit items-center gap-2">
             <Title>OFERTAS</Title>
-          </Link>
+            <Link href="/deals" className="text-xs font-bold text-primary">
+              Ver mais
+            </Link>
+          </div>
           <ProductList products={deals} />
         </section>
 
@@ -77,9 +80,15 @@ export default async function Home() {
         </div>
 
         <section className="flex flex-col gap-5" aria-label="Teclados">
-          <Link href="/category/keyboards" className="w-fit">
+          <div className="flex w-fit items-center gap-2">
             <Title>TECLADOS</Title>
-          </Link>
+            <Link
+              href="/category/keyboards"
+              className="text-xs font-bold text-primary"
+            >
+              Ver mais
+            </Link>
+          </div>
 
           <ProductList products={keyboards.products} />
         </section>
@@ -99,9 +108,16 @@ export default async function Home() {
         </Link>
 
         <section className="mb-5 flex flex-col gap-5" aria-label="Mouses">
-          <Link href="/category/mouses" className="w-fit">
+          <div className="flex w-fit items-center gap-2">
             <Title>MOUSES</Title>
-          </Link>
+            <Link
+              href="/category/mouses"
+              className="text-xs font-bold text-primary"
+            >
+              Ver mais
+            </Link>
+          </div>
+
           <ProductList products={mouses.products} />
         </section>
       </Container>
